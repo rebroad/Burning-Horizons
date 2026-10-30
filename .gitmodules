@@ -1,0 +1,3 @@
+[submodule "original-island"]
+	path = worlds/original-island
+	url = https://github.com/lozknowles/elsemesh-world-original-island.git
