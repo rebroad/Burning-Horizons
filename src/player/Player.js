@@ -238,10 +238,29 @@ export class Player {
 		// Measure a grounded step from the accepted feet height, before this frame's gravity.
 		const stepHeight = this.grounded ? 0.4 + Math.max( 0, old.y - p.y ) : 0.4;
 		this.colliders.resolveCapsule( p, RADIUS, HEIGHT, stepHeight );
-        // Validate the FINAL displacement: solid resolution can push X/Z too.
-        if ( this.terrain.constrainPlayer?.( old, p, { radius: RADIUS, height: HEIGHT, mode: this.mode } ) === false ) {
-            this.velocity.x = 0; this.velocity.z = 0;
-        }
+		// Validate the FINAL displacement: solid resolution can push X/Z too. If
+		// that push makes a diagonal segment invalid, try each axis independently
+		// so the player can keep moving along the obstacle instead of sticking.
+		const attempted = p.clone(), movement = { radius: RADIUS, height: HEIGHT, mode: this.mode };
+		if ( this.terrain.constrainPlayer?.( old, p, movement ) === false ) {
+			const slides = [
+				{ axis: 'x', position: new THREE.Vector3( attempted.x, attempted.y, old.z ) },
+				{ axis: 'z', position: new THREE.Vector3( old.x, attempted.y, attempted.z ) },
+			];
+			let accepted = null;
+			for ( const slide of slides ) {
+				this.colliders.resolveCapsule( slide.position, RADIUS, HEIGHT, stepHeight );
+				if ( this.terrain.constrainPlayer?.( old, slide.position, movement ) !== false &&
+					( ! accepted || slide.position.distanceToSquared( old ) > accepted.position.distanceToSquared( old ) ) ) accepted = slide;
+			}
+			if ( accepted ) {
+				p.copy( accepted.position );
+				if ( accepted.axis === 'x' ) this.velocity.z = 0;
+				else this.velocity.x = 0;
+			} else {
+				this.velocity.x = 0; this.velocity.z = 0;
+			}
+		}
 		if ( this.landOnBoat( old, p ) ) return;
 		const g = this.groundAt( p.x, p.z, p.y + 0.45 );
 		if ( p.y <= g ) {
