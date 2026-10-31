@@ -2,6 +2,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
+import {DOCK_WORLD_ID,ROOM_WORLD_ID,DOCK_CONTENT_DIGEST,readDockPublication} from './dock-publication.mjs';
 import {packageOutputSurfaceDerivative} from './output-surface-transform.mjs';
 import {validatePublishedWorldCatalog} from '../src/world-runtime/PublishedWorldCatalog.js';
 import {TABLE_TENNIS_SPLAT_PROFILE,assertQualifiedSplatProfile} from '../src/world-runtime/SplatSceneProfiles.js';
@@ -10,7 +11,8 @@ const [buildArg,worldArg,outputArg,previousPagesArg]=process.argv.slice(2);
 if(!buildArg||!worldArg||!outputArg||!previousPagesArg)throw Error('Usage: node tools/package-published-worlds.mjs BUILD PINNED_WORLD_REPOSITORY NEW_OUTPUT PREVIOUS_PUBLIC_PAGES');
 const build=await fs.realpath(buildArg),world=await fs.realpath(worldArg),previous=await fs.realpath(previousPagesArg),output=path.resolve(outputArg);
 const catalog=validatePublishedWorldCatalog(JSON.parse(await fs.readFile(path.join(build,'published-worlds.json'),'utf8')),{baseURL:'https://publication.invalid/ElseMesh/index.html'});
-const opening=catalog.worlds.find(w=>w.worldId===catalog.openingWorldId),room=catalog.worlds.find(w=>w.worldId!==catalog.openingWorldId);
+const opening=catalog.worlds.find(w=>w.worldId===catalog.openingWorldId),room=catalog.worlds.find(w=>w.worldId===ROOM_WORLD_ID),dock=catalog.worlds.find(w=>w.worldId===DOCK_WORLD_ID);
+if(!room||catalog.worlds.length>3||catalog.worlds.some(w=>![opening.worldId,ROOM_WORLD_ID,DOCK_WORLD_ID].includes(w.worldId))||dock&&dock.contentDigest!==DOCK_CONTENT_DIGEST)throw Error('Unsupported fixed public world inventory');
 const git=(...args)=>{const r=spawnSync('git',['-C',world,...args],{encoding:'utf8',maxBuffer:1024*1024});if(r.status)throw Error('Pinned public world Git check failed');return r.stdout.trim();};
 if(git('status','--porcelain','--untracked-files=all'))throw Error('World repository must be clean');const commit=git('rev-parse','HEAD');
 const openingConfig=JSON.parse(await fs.readFile(path.join(build,'opening-world.json'),'utf8'));
@@ -55,7 +57,9 @@ if(!/^snapshots\/[a-f0-9]{64}\/connections\.json$/.test(connectionsRef.path))thr
 const connectionsBytes=new Uint8Array(await fs.readFile(path.join(world,connectionsRef.path)));
 if(connectionsBytes.byteLength!==connectionsRef.bytes||await repositoryDigest(connectionsBytes)!==connectionsRef.sha256)throw Error('Warehouse connections integrity');
 const warehousePortals=JSON.parse(new TextDecoder().decode(connectionsBytes)).portals;
-for(const route of catalog.routes){const portals=route.sourceWorldId===opening.worldId?warehousePortals:loaded.project.portals;const door=portals.find(p=>p.id===route.portalId);if(!door?.enabled||door.destination.worldId!==route.destinationWorldId||door.destination.portalId!==route.destinationPortalId)throw Error('Catalog route differs from authored world');}
+const dockPackage=dock?await readDockPublication(path.join(world,'worlds/dock'),{tracked}):null;
+const projectsByWorld=new Map([[opening.worldId,{portals:warehousePortals}],[ROOM_WORLD_ID,loaded.project],...(dockPackage?[[DOCK_WORLD_ID,dockPackage.loaded.project]]:[])]);
+for(const route of catalog.routes){const portals=projectsByWorld.get(route.sourceWorldId)?.portals??[];const door=portals.find(p=>p.id===route.portalId);if(!door?.enabled||door.destination.worldId!==route.destinationWorldId||door.destination.portalId!==route.destinationPortalId)throw Error('Catalog route differs from authored world');}
 
 if(await repositoryDigest(new Uint8Array(await fs.readFile(path.join(sourceRoot,'world.json'))))!==room.contentDigest)throw Error('Table Tennis Room manifest pin changed');
 const destination=path.join(output,room.bundlePath);await fs.mkdir(destination,{recursive:false});let total=0;
@@ -64,6 +68,7 @@ for(const relative of [...needed].sort()){
  if(!full.startsWith(sourceRoot+path.sep)||!info.isFile()||info.isSymbolicLink())throw Error('Unsupported Table Tennis Room file');total+=info.size;if(total>32*1024*1024||needed.size>100)throw Error('Table Tennis Room package budget');
  const target=path.join(destination,relative);await fs.mkdir(path.dirname(target),{recursive:true});await fs.copyFile(full,target);
 }
+if(dockPackage){const destination=path.join(output,dock.bundlePath);await fs.mkdir(destination,{recursive:false});for(const [relative,bytes]of dockPackage.files){const target=path.join(destination,relative);await fs.mkdir(path.dirname(target),{recursive:true});await fs.writeFile(target,bytes);}}
 async function inspect(dir){const info=await fs.lstat(dir);if(info.isSymbolicLink())throw Error('Symlink in public editor');if(info.isDirectory())for(const name of await fs.readdir(dir))await inspect(path.join(dir,name));else if(!info.isFile())throw Error('Invalid editor file');}
 // Keep bounded immutable asset names used by tabs opened before this release.
 const priorAssets=path.join(previous,'assets'),outputAssets=path.join(output,'assets');
@@ -83,6 +88,7 @@ await inspect(path.join(previous,'editor'));await fs.cp(path.join(previous,'edit
 await fs.copyFile(path.join(build,'published-worlds.json'),path.join(output,'published-worlds.json'));
 await fs.copyFile(fileURLToPath(new URL('../node_modules/@sparkjsdev/spark/LICENSE',import.meta.url)),path.join(output,'licenses/SPARK-LICENSE.txt'));
 let credits=await fs.readFile(path.join(output,'credits.html'),'utf8');credits=credits.replace('</html>',`<section><h2>Table Tennis Room</h2><p><a href="https://superspl.at/scene/0d9e613b">Table Tennis Room</a> by ethan3111, licensed under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>. Adapted for ElseMesh with decimation to ${TABLE_TENNIS_SPLAT_PROFILE.asset.count.toLocaleString('en-US')} Gaussians, orientation and gameplay-scale changes, and authored collision/support geometry.</p><p>Gaussian rendering uses Spark 2.4.0 and Three.js 0.180.0. <a href="licenses/SPARK-LICENSE.txt">Spark licence</a>. <a href="${room.bundlePath}ATTRIBUTION.md">Scene attribution</a>.</p></section></html>`);await fs.writeFile(path.join(output,'credits.html'),credits);
+if(dock){let credits=await fs.readFile(path.join(output,'credits.html'),'utf8');credits=credits.replace('</html>',`<section><h2>Bracken Quay Dock</h2><p>Original procedural dock: DRG Software Solutions LLC, MIT. OpenX traffic derivatives: MPL-2.0 AND CC-BY-4.0; Dogan Ulus, myedsu and razor24. <a href="${dock.bundlePath}NOTICE">Notice</a> · <a href="${dock.bundlePath}ATTRIBUTION.md">Attribution</a> · <a href="${dock.bundlePath}models/port/CREDITS.md">Vehicle credits</a> · <a href="${dock.bundlePath}models/port/licensing/README.md">Modification sources and licences</a>.</p></section></html>`);await fs.writeFile(path.join(output,'credits.html'),credits);}
 // The installed local companion is separately licensed from application code.
 const duckFiles=['microduck-realtime.glb','ATTRIBUTION.md','LICENSE-MODELS.md','LICENSE-APACHE-2.0.txt','manifest.json','collision-proxy.json'];
 await fs.mkdir(path.join(output,'models/microduck'));
@@ -103,5 +109,5 @@ const sourceContract=await fs.readFile(new URL('../src/world-runtime/vendor/worl
 // Upstream contract provenance covers its unchanged source bytes only.
 // Record and preserve the build derivative separately, including final chunks.
 const outputSurfaceDerivative=await packageOutputSurfaceDerivative(build,output);
-await fs.writeFile(path.join(output,'publication.json'),JSON.stringify({schema:'elsemesh.publication/1',outputSurfaceDerivative,...preserved,engineCommit,worldContract:{sourceNormalization:'UTF-8 LF',commit:contractProvenance.commit,bundleSha256:contractProvenance.bundleSha256,baseBundleSha256:contractProvenance.baseBundleSha256??contractProvenance.bundleSha256,downstreamPatches:contractProvenance.downstreamPatches??[]},worldRepositoryCommit:commit,openingWorldId:opening.worldId,worlds:catalog.worlds,routes:catalog.routes,scene:{name:TABLE_TENNIS_SPLAT_PROFILE.name,count:TABLE_TENNIS_SPLAT_PROFILE.asset.count,assetSha256:loaded.project.splatScene.asset.sha256,physicsSha256:loaded.project.splatScene.physics.sha256,sourceManifestSha256:provenance.sourceManifestSha256,reviewSha256:provenance.reviewSha256,auditedOriginalBytes:originalBytes},previousPublicEditorPreserved:true},null,2)+'\n');
+await fs.writeFile(path.join(output,'publication.json'),JSON.stringify({schema:'elsemesh.publication/1',outputSurfaceDerivative,...preserved,engineCommit,worldContract:{sourceNormalization:'UTF-8 LF',commit:contractProvenance.commit,bundleSha256:contractProvenance.bundleSha256,baseBundleSha256:contractProvenance.baseBundleSha256??contractProvenance.bundleSha256,downstreamPatches:contractProvenance.downstreamPatches??[]},worldRepositoryCommit:commit,openingWorldId:opening.worldId,worlds:catalog.worlds,routes:catalog.routes,...(dockPackage?{dock:{sourceCommit:'fbc9f7e352b03b18d96ad428742770f844fcfc0d',contentDigest:DOCK_CONTENT_DIGEST,bytes:dockPackage.total,files:dockPackage.files.size}}:{}),scene:{name:TABLE_TENNIS_SPLAT_PROFILE.name,count:TABLE_TENNIS_SPLAT_PROFILE.asset.count,assetSha256:loaded.project.splatScene.asset.sha256,physicsSha256:loaded.project.splatScene.physics.sha256,sourceManifestSha256:provenance.sourceManifestSha256,reviewSha256:provenance.reviewSha256,auditedOriginalBytes:originalBytes},previousPublicEditorPreserved:true},null,2)+'\n');
 console.log(JSON.stringify({output,worldRepositoryCommit:commit,roomBytes:total,auditedOriginalBytes:originalBytes,originalSourcesBundled:false,worlds:catalog.worlds}));

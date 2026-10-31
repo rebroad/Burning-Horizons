@@ -4,9 +4,9 @@ const worldId=v=>typeof v==='string'&&/^elsemesh\.world:[A-Za-z0-9._:-]{1,120}$/
 const portalId=v=>typeof v==='string'&&/^elsemesh-portal:[A-Za-z0-9._:-]{1,120}$/.test(v);
 const digest=v=>typeof v==='string'&&/^[a-f0-9]{64}$/.test(v);
 export const PUBLISHED_CATALOG_SCHEMA='elsemesh.published-world-catalog/1';
-/** Public deployment permissions are an explicit two-world local catalog, not VIEW/ENTER. */
+/** Public deployment permissions are an explicit bounded local star catalog, not VIEW/ENTER. */
 export function validatePublishedWorldCatalog(value,{baseURL=globalThis.location?.href}={}){
- if(!exact(value,['schema','renderer','openingWorldId','worlds','routes'])||value.schema!==PUBLISHED_CATALOG_SCHEMA||value.renderer!=='webgl2'||!worldId(value.openingWorldId)||!Array.isArray(value.worlds)||value.worlds.length!==2||!Array.isArray(value.routes)||value.routes.length!==2)throw Error('Invalid published world catalog');
+ if(!exact(value,['schema','renderer','openingWorldId','worlds','routes'])||value.schema!==PUBLISHED_CATALOG_SCHEMA||value.renderer!=='webgl2'||!worldId(value.openingWorldId)||!Array.isArray(value.worlds)||![2,3].includes(value.worlds.length)||!Array.isArray(value.routes)||value.routes.length!==2*(value.worlds.length-1))throw Error('Invalid published world catalog');
  const base=new URL('./',baseURL);if(!['http:','https:'].includes(base.protocol)||base.username||base.password)throw Error('Published worlds require an HTTP deployment');
  const ids=new Set(),paths=new Set();
  for(const entry of value.worlds){
@@ -15,7 +15,16 @@ export function validatePublishedWorldCatalog(value,{baseURL=globalThis.location
  }
  if(!ids.has(value.openingWorldId))throw Error('Published opening world is absent');
  for(const route of value.routes)if(!exact(route,['sourceWorldId','portalId','destinationWorldId','destinationPortalId'])||!ids.has(route.sourceWorldId)||!ids.has(route.destinationWorldId)||route.sourceWorldId===route.destinationWorldId||!portalId(route.portalId)||!portalId(route.destinationPortalId))throw Error('Invalid published route');
- const [a,b]=value.routes;if(a.sourceWorldId!==b.destinationWorldId||a.destinationWorldId!==b.sourceWorldId||a.portalId!==b.destinationPortalId||a.destinationPortalId!==b.portalId)throw Error('Published routes must be one exact reciprocal pair');
+ const endpoints=new Set(),leaves=new Set();
+ for(const route of value.routes){
+  const key=route.sourceWorldId+'|'+route.portalId;
+  if(endpoints.has(key))throw Error('Duplicate published portal endpoint');endpoints.add(key);
+  if(route.sourceWorldId!==value.openingWorldId&&route.destinationWorldId!==value.openingWorldId)throw Error('Published routes must form an opening-world star');
+  if(route.sourceWorldId===value.openingWorldId){if(leaves.has(route.destinationWorldId))throw Error('Duplicate published leaf connection');leaves.add(route.destinationWorldId);}
+  const reverse=value.routes.filter(r=>r.sourceWorldId===route.destinationWorldId&&r.destinationWorldId===route.sourceWorldId&&r.portalId===route.destinationPortalId&&r.destinationPortalId===route.portalId);
+  if(reverse.length!==1)throw Error('Published routes must be exact reciprocal pairs');
+ }
+ if(leaves.size!==value.worlds.length-1)throw Error('Published star must connect every leaf once');
  return Object.freeze({schema:value.schema,renderer:value.renderer,openingWorldId:value.openingWorldId,worlds:Object.freeze(value.worlds.map(e=>Object.freeze({...e}))),routes:Object.freeze(value.routes.map(e=>Object.freeze({...e})))});
 }
 export async function readDeploymentJSON(url,{fetcher=fetch,maxBytes=16384,timeoutMs=10000,optional=false}={}){

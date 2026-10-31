@@ -56,3 +56,21 @@ test('replacement installation retains old GPU graph until retirement and cannot
  await f.duck.install(replacement);assert.equal(f.counts().disposed,0);assert.equal(f.duck.retired.size,1);assert.ok(old.root.children.length);f.duck.update(1/30);const actor=f.duck.actor;assert.ok(actor);const pose=actor.position.toArray();f.duck.releaseCandidate(old);assert.equal(f.counts().disposed,1);assert.equal(f.duck.actor,actor);assert.deepEqual(actor.position.toArray(),pose);assert.equal(f.duck.context('a').root,replacement.root);
  f.duck.stop();for(const c of [old,replacement,f.candidates[1]])f.duck.releaseCandidate(c);assert.deepEqual(f.counts(),{created:3,disposed:3});
 });
+
+function starFixture(){
+ const roomId='elsemesh.world:5c2e6618-a04a-4460-912a-bfc57bc5bbad',ids=['warehouse',roomId,'dock'],portal=(id,to,exit,x=0)=>({id,position:[x,1.452,0],yaw:0,width:2.06,height:2.904,enabled:true,traversal:{enabled:true},destination:{worldId:to,portalId:exit}}),candidates=ids.map(id=>({descriptor:{worldId:id},root:new T.Group(),terrain:{heightAt:()=>0},colliders:new Colliders(),project:{portals:[]}}));
+ candidates[0].project.portals=[portal('dock-door',ids[2],'dock-return',10),portal('room-door',ids[1],'room-return')];candidates[1].project.portals=[portal('room-return',ids[0],'room-door')];candidates[2].project.portals=[portal('dock-return',ids[0],'dock-door')];
+ const f=makeFixture({candidates});f.runtime.catalog.routes=candidates.flatMap(c=>c.project.portals.map(p=>({sourceWorldId:c.descriptor.worldId,portalId:p.id,destinationWorldId:p.destination.worldId,destinationPortalId:p.destination.portalId})));return f;
+}
+
+test('three-world companion installs and prepares only Warehouse and explicit Room even when Dock is unavailable',async()=>{
+ const f=starFixture(),[warehouse,room,dock]=f.candidates,requests=[];assert.equal(await f.duck.install(dock),false);assert.equal(f.counts().created,0);await f.duck.install(warehouse);
+ f.runtime.package=async id=>{requests.push(id);assert.notEqual(id,'dock');const record=f.records.get(id);await f.duck.install(record.candidate);return record;};
+ await f.duck.prepareOther();await f.duck.loading;f.duck.update(1/30);assert.ok(f.duck.actor);assert.equal(f.duck.contexts.size,2);assert.deepEqual(requests,[room.descriptor.worldId]);assert.deepEqual(f.duck.actor.explorationOrigin.toArray(),[0,0,.8]);assert.equal(f.counts().created,2);
+ const dockDoor=warehouse.project.portals[0],actor=f.duck.actor;assert.equal(f.duck.eligibility(dockDoor),false);const before=requests.length,result=await f.duck.transfer({actorId:actor.id,sourceWorldId:actor.worldId,portal:dockDoor,sourcePosition:[10,0,0],previousPosition:[10,0,.1]});assert.equal(result.cancelled,true);assert.equal(requests.length,before);assert.equal(actor.worldId,warehouse.descriptor.worldId);
+ f.setActive(dock);f.duck.update(1/30);assert.equal(f.duck.actor,actor);assert.equal(f.duck.context('dock'),null);assert.equal(f.counts().created,2);f.duck.stop();for(const c of f.candidates)f.duck.releaseCandidate(c);assert.deepEqual(f.counts(),{created:2,disposed:2});
+});
+
+test('three-world companion does not silently choose Dock if explicit Room is absent',async()=>{
+ const f=starFixture();f.runtime.catalog.worlds[1].worldId='another-leaf';const duck=new PublicMicroduck({runtime:f.runtime,getActive:()=>f.candidates[0],createVisual:f.duck.createVisual});assert.equal(duck.habitat.size,1);assert.equal(await duck.install(f.candidates[2]),false);assert.equal(await duck.install(f.candidates[1]),false);await duck.install(f.candidates[0]);assert.equal(duck.start(),false);duck.dispose();duck.releaseCandidate(f.candidates[0]);
+});

@@ -22,6 +22,11 @@
 @media (any-pointer:coarse){
  #repository-touch-layer:not([hidden]){display:block}
  #hud{bottom:calc(145px + env(safe-area-inset-bottom,0px));left:14px;max-width:45vw;font-size:11px}
+ body .elsemesh-avatar-open{
+  left:calc(50% + (env(safe-area-inset-left,0px) - env(safe-area-inset-right,0px))/2);
+  bottom:calc(22px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
+  padding:10px 8px;font-size:12px
+ }
 }
 @media (any-pointer:coarse) and (max-height:600px){
  #panel{max-height:44vh;overflow:auto;max-width:46vw}

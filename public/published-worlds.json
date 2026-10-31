@@ -12,6 +12,11 @@
       "worldId": "elsemesh.world:5c2e6618-a04a-4460-912a-bfc57bc5bbad",
       "contentDigest": "f231b6e2e49f3dfebd19f7217895d00479bac27bf73e2eeb3295f244e8dec547",
       "bundlePath": "worlds/f231b6e2e49f3dfebd19f7217895d00479bac27bf73e2eeb3295f244e8dec547/"
+    },
+    {
+      "worldId": "elsemesh.world:63121706-d439-4091-95b0-780b7d8563e8",
+      "contentDigest": "36e60f42dffa422ef20dce60a14a9da238ccce49eb96e248dc5952f6b3429808",
+      "bundlePath": "worlds/36e60f42dffa422ef20dce60a14a9da238ccce49eb96e248dc5952f6b3429808/"
     }
   ],
   "routes": [
@@ -26,6 +31,18 @@
       "portalId": "elsemesh-portal:e65ee4f4-6357-4e80-bfe4-341a07965c0c",
       "destinationWorldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
       "destinationPortalId": "elsemesh-portal:3b1b0e2d-bb73-4660-b916-2edf7678699a"
+    },
+    {
+      "sourceWorldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
+      "portalId": "elsemesh-portal:42b50e2b-6845-4c50-abd9-7b8234fbb034",
+      "destinationWorldId": "elsemesh.world:63121706-d439-4091-95b0-780b7d8563e8",
+      "destinationPortalId": "elsemesh-portal:33363276-b643-4ab5-9fb2-8f066aa8ba3b"
+    },
+    {
+      "sourceWorldId": "elsemesh.world:63121706-d439-4091-95b0-780b7d8563e8",
+      "portalId": "elsemesh-portal:33363276-b643-4ab5-9fb2-8f066aa8ba3b",
+      "destinationWorldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
+      "destinationPortalId": "elsemesh-portal:42b50e2b-6845-4c50-abd9-7b8234fbb034"
     }
   ]
 }

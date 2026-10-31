@@ -27,12 +27,13 @@ test('optional installed model rejects an oversized stream before allocation or 
  const {loadPinnedMicroduck}=await import('../src/npc/RigidCharacterVisual.js');let cancelled=0;
  await assert.rejects(loadPinnedMicroduck('oversized-test',{fetcher:async()=>({ok:true,headers:new Headers(),body:{getReader:()=>({read:async()=>({done:false,value:new Uint8Array(MICRODUCK_BYTES+1)}),cancel:async()=>{cancelled++;}})}})}),/exceeds byte limit/);assert.equal(cancelled,1);
 });
-test('a stalled HTTP model body has a deadline and optional duck installation fails soft',async()=>{
+test('a stalled HTTP model body has a deadline and optional duck installation fails soft',async t=>{
  const {createServer}=await import('node:http'),{loadPinnedMicroduck}=await import('../src/npc/RigidCharacterVisual.js'),{PublicMicroduck}=await import('../src/world-runtime/PublicMicroduck.js');
  const server=createServer((req,res)=>{res.writeHead(200,{'Content-Type':'model/gltf-binary'});res.write(Buffer.from([1,2,3]));});await new Promise(resolve=>server.listen(0,'127.0.0.1',resolve));
- const root=new (await import('../src/world-runtime/vendor/world-engine-contract.js')).T.Group(),candidate={root,descriptor:{worldId:'a'},terrain:{heightAt:()=>0},colliders:{}},runtime={entry:id=>id==='a'?{contentDigest:'a'}:null,enabled:true};
+ t.after(async()=>{server.closeAllConnections();await new Promise(resolve=>server.close(resolve));});
+ const root=new (await import('../src/world-runtime/vendor/world-engine-contract.js')).T.Group(),candidate={root,descriptor:{worldId:'a'},terrain:{heightAt:()=>0},colliders:{}},runtime={catalog:{openingWorldId:'a',worlds:[{worldId:'a'},{worldId:'b'}]},entry:id=>id==='a'?{contentDigest:'a'}:null,enabled:true};
  const duck=new PublicMicroduck({runtime,createVisual:()=>new RigidCharacterVisual({load:()=>loadPinnedMicroduck('http://127.0.0.1:'+server.address().port+'/',{timeoutMs:40})})});const begin=performance.now();
- try{assert.equal(await duck.install(candidate),false);assert.ok(performance.now()-begin<2000);assert.equal(root.children.length,0);assert.equal(runtime.enabled,true);assert.equal(duck.diagnostics().status,'unavailable');}finally{duck.dispose();server.closeAllConnections();await new Promise(resolve=>server.close(resolve));}
+ try{assert.equal(await duck.install(candidate),false);assert.ok(performance.now()-begin<2000);assert.equal(root.children.length,0);assert.equal(runtime.enabled,true);assert.equal(duck.diagnostics().status,'unavailable');}finally{duck.dispose();}
 });
 
 test('valid decoded model body is admitted even when compressed transfer headers report a different size',async()=>{

@@ -130,7 +130,7 @@ async function init(){
    'Drag the mouse or use arrow keys to look. Press V to switch between first-person and follow view.',
    'Find the gold Table Tennis Room doorway beside the Dock portal in the warehouse. Move around it to see the room, then walk through when its view is ready.',
    'In the Table Tennis Room, walk within the room boundaries and around the table. Return through the same gold doorway.',
-   'The Dock doorway keeps its existing appearance; this single-player tour connects only the gold Table Tennis Room doorway.',
+   'The Dock doorway leads to Bracken Quay Dock. Walk back through its doorway to return to the warehouse.',
    'Press E near a computer. At the TV, press E, then Play on TV. Return to game keeps it playing; press E again to control or stop it. Using a computer stops the TV.',
    'Microduck is your local companion for this browser session. It explores the warehouse, visits the Table Tennis Room through the gold doorway and returns.',
    'This is a public single-player tour. No owner connection or visitor permission setup is needed.',
@@ -285,12 +285,12 @@ async function init(){
   openingProgress.advance('reading-world');
   const config=await readOpeningWorld();if(!config){hideOpeningSplash();return;}if(host.generation!==openingGeneration)return;
   openingLoading=true;openingTargetWorldId=config.worldId;openingTargetDigest=config.contentDigest;openingExpectedGeneration=openingGeneration+1;
-  report(installation.kind==='published'?'Loading Warehouse and Table Tennis Room single-player tour…':'Loading published opening island…');
+  report(installation.kind==='published'?'Loading Warehouse, Dock and Table Tennis Room single-player tour…':'Loading published opening island…');
   const active=await loadOpeningWorld(app,config,{publishedCatalog:installation.kind==='published'?installation.catalog:null,onProgress:stage=>{if(openingLoading&&host.generation<=openingExpectedGeneration)openingProgress.advance(stage);}});if(!active)return;
   pendingOpeningReady=active;
   document.querySelector('#repository-tools').hidden=true;document.querySelector('#choose-world').hidden=false;document.querySelector('#coordinator-controls').hidden=true;
   document.querySelector('#panel h1').textContent=active.project.metadata.name;
-  if(installation.kind==='published'){report('Warehouse and Table Tennis Room · single player');document.querySelector('#portal-status').textContent='Walk through the gold Table Tennis Room door beside the Dock portal. Return through the doorway in the Table Tennis Room.';}else report('Published island · revision '+(active.identity.resolvedCommit??validateOpeningWorld(config).source.ref).slice(0,12)+' · '+selected.backend);
+  if(installation.kind==='published'){report('Warehouse, Dock and Table Tennis Room · single player');document.querySelector('#portal-status').textContent='Walk through either the Dock or gold Table Tennis Room doorway. Return through the doorway in that world.';}else report('Published island · revision '+(active.identity.resolvedCommit??validateOpeningWorld(config).source.ref).slice(0,12)+' · '+selected.backend);
  })().catch(error=>{openingProgress.fail(error.message);report('Opening world could not load: '+error.message);document.querySelector('#portal-status').textContent='Opening world unavailable. Retry by reloading, or choose a repository.';});
  window.addEventListener('pagehide',()=>{graphics?.dispose();sunsetOutput?.dispose();playerEyes?.dispose();media.dispose();refraction?.dispose();objectAccess.invalidate();worldWelcome.dispose();welcomeView.dispose();controlsHelp.dispose();portals.dispose();portalEffects.dispose();retro.dispose();avatar.dispose();host.dispose();engine.stop();if(isWebGL)engine.dispose();else GPU.device?.destroy();});report('ElseMesh '+selected.backend+' ready. Open a world repository folder or public GitHub source.');
  window.dispatchEvent(new CustomEvent('repository-world-ready',{detail:app}));

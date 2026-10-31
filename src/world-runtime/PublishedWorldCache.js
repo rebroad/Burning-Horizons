@@ -1,10 +1,10 @@
 const keyOf=(loaded,renderer)=>renderer+'|'+loaded.identity.worldId+'|'+loaded.identity.contentDigest;
 const check=(v,m)=>{if(!v)throw Error(m);};
 const fingerprint=c=>{const values=[];c.root.traverse(n=>{for(const m of Array.isArray(n.material)?n.material:[n.material])if(m)values.push(m.id+':'+m.version);});return [...new Set(values)].sort().join('|');};
-/** Two content-only packages. Preparation leases protect the entire coupled
+/** Two or three content-only packages. Preparation leases protect the entire coupled
  * graph (roots, apertures and materials) before any asynchronous GPU operation. */
 export class PublishedWorldCache{
- constructor({renderer='webgl2',limit=2,dispose=()=>{},readinessFingerprint=fingerprint}={}){check(limit===2,'Published cache has exactly two slots');Object.assign(this,{renderer,limit,disposeCandidate:dispose,fingerprint:readinessFingerprint});this.records=new Map();this.active=null;this.disposed=false;this.whenDisposed=new Promise(resolve=>{this.resolveDisposed=resolve;});}
+ constructor({renderer='webgl2',limit=2,dispose=()=>{},readinessFingerprint=fingerprint}={}){check(Number.isInteger(limit)&&limit>=2&&limit<=3,'Published cache requires two or three slots');Object.assign(this,{renderer,limit,disposeCandidate:dispose,fingerprint:readinessFingerprint});this.records=new Map();this.active=null;this.disposed=false;this.whenDisposed=new Promise(resolve=>{this.resolveDisposed=resolve;});}
  get(loaded){if(this.disposed)return null;const r=this.records.get(keyOf(loaded,this.renderer));return r&&!r.disposed?r:null;}
  register(loaded,candidate){check(!this.disposed&&loaded?.identity?.worldId&&loaded.identity.contentDigest&&candidate?.root,'Invalid published cache registration');const key=keyOf(loaded,this.renderer),old=this.records.get(key);if(old){check(old.candidate.root===candidate.root,'Duplicate published package');return old;}check(this.records.size<this.limit,'Published cache capacity exhausted');check(![...this.records.values()].some(r=>r.candidate.root===candidate.root),'Published root already registered');const {player,generation,resourceLease,preparedState,...graphics}=candidate,r={key,loaded,candidate:graphics,active:false,pin:null,disposed:false,ready:true,fingerprint:this.fingerprint(candidate),viewEntries:candidate.publicViewEntries??null,disposeViews:candidate.disposePublicViews};this.records.set(key,r);return r;}
  isReady(record){return !this.disposed&&!!record&&!record.disposed&&record.ready&&record.fingerprint===this.fingerprint(record.candidate);}

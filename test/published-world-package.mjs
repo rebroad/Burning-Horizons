@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import {createHash} from 'node:crypto';
+import {DOCK_WORLD_ID,DOCK_CONTENT_DIGEST,DOCK_NOTICE_PINS,readDockPublication} from '../tools/dock-publication.mjs';
 import {TABLE_TENNIS_SPLAT_PROFILE,assertQualifiedSplatProfile} from '../src/world-runtime/SplatSceneProfiles.js';
 import {validatePublishedWorldCatalog} from '../src/world-runtime/PublishedWorldCatalog.js';
 import {patchOutputSurface,outputSurfaceManifestName,outputSurfaceTransformVersion} from '../tools/output-surface-transform.mjs';
@@ -93,3 +94,15 @@ test('generated publication preserves separately hashed output-surface derivativ
  for(const [name,digest]of chunks){assert.match(name,/^assets\/[A-Za-z0-9_-][A-Za-z0-9_.-]*\.js$/);assert.ok(!name.includes('..'));assert.match(digest,/^[a-f0-9]{64}$/);const chunk=path.join(root,name),stat=await fs.lstat(chunk);assert.ok(stat.isFile()&&!stat.isSymbolicLink());assert.equal(sha(await fs.readFile(chunk)),digest,name);}
 });
 
+
+
+test('public game has three fixed world packages and complete admitted Dock runtime/source licences',async()=>{
+ assert.equal(catalog.worlds.length,3);assert.equal(catalog.routes.length,4);
+ const dock=catalog.worlds.find(w=>w.worldId===DOCK_WORLD_ID);assert.ok(dock);assert.equal(dock.contentDigest,DOCK_CONTENT_DIGEST);
+ const {loaded,files,total}=await readDockPublication(path.join(root,dock.bundlePath));assert.equal(total,12478386);assert.equal(files.size,23);
+ const actual=[];async function inspect(dir,prefix=''){for(const item of await fs.readdir(dir,{withFileTypes:true})){assert.ok(!item.isSymbolicLink());const relative=prefix+item.name;if(item.isDirectory())await inspect(path.join(dir,item.name),relative+'/');else actual.push(relative);}}await inspect(path.join(root,dock.bundlePath));assert.deepEqual(actual.sort(),[...files.keys()].sort());
+ for(const name of Object.keys(DOCK_NOTICE_PINS))assert.ok(files.has(name));
+ assert.equal(loaded.project.portals[0].destination.worldId,catalog.openingWorldId);
+ const publication=JSON.parse(await fs.readFile(path.join(root,'publication.json'),'utf8'));assert.equal(publication.dock.contentDigest,DOCK_CONTENT_DIGEST);assert.equal(publication.dock.bytes,total);
+ const credits=await fs.readFile(path.join(root,'credits.html'),'utf8');for(const text of ['Bracken Quay Dock','MPL-2.0 AND CC-BY-4.0',dock.bundlePath+'NOTICE',dock.bundlePath+'models/port/licensing/README.md'])assert.ok(credits.includes(text));
+});
