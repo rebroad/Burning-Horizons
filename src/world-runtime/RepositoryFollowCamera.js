@@ -48,6 +48,8 @@ export class RepositoryFollowCamera{
   const yaw=Number.isFinite(player.yaw)?player.yaw:0;
   this.offset.set(DEFAULT_OFFSET[0]*Math.cos(yaw)+DEFAULT_OFFSET[2]*Math.sin(yaw),DEFAULT_OFFSET[1],-DEFAULT_OFFSET[0]*Math.sin(yaw)+DEFAULT_OFFSET[2]*Math.cos(yaw));
   const target=player.position.clone();target.y+=1.15;
+  const lookPitch=Math.max(-1.25,Math.min(1.25,Number.isFinite(player.pitch)?player.pitch:0));
+  target.y+=Math.tan(lookPitch)*Math.hypot(this.offset.x,this.offset.z);
   const anchor=target.clone(),desired=target.clone().add(this.offset),clearance=this.planeClearance();
   const planes=(active.project?.portals??[]).filter(portal=>{
    if(portal.enabled===false||portalDistance(portal,player.position)>7)return false;
