@@ -1,5 +1,5 @@
 // Keyboard / mouse input with pointer lock support.
-const LOOK_VERTICAL_DEAD_ZONE = 0.78;
+const LOOK_VERTICAL_DEAD_ZONE = 0.16;
 const KEYBOARD_LOOK_SPEED = 700; // Mouse-equivalent units per second (about 88 degrees/s on foot).
 const LOOK_KEYS = new Set( [ 'ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown' ] );
 const ownsKeyboard = target => Boolean( target && (
@@ -28,11 +28,14 @@ export class Input {
 		this.rightDown = false;
 		this.locked = false;
 		this.enabled = true;
+		this.keyboardDetected = Boolean( window.matchMedia?.( '(any-pointer: fine)' ).matches );
 		this.keyboardLookBlocked = keyboardLookBlocked;
 
 		// Capture releases even when a menu consumes the corresponding key event.
 		window.addEventListener( 'keyup', ( e ) => this.keys.delete( e.code ), true );
 		window.addEventListener( 'keydown', ( e ) => {
+
+			if ( e.isTrusted && e.code && e.code !== 'Unidentified' ) this.keyboardDetected = true;
 
 			if ( e.ctrlKey || e.metaKey || e.altKey ) this.clearKeyboardLook();
 
@@ -140,7 +143,11 @@ export class Input {
 
 	}
 
-	get touchInterface() { return Boolean( window.matchMedia?.( '(any-pointer: coarse)' ).matches || window.matchMedia?.( '(pointer: coarse)' ).matches ); }
+	get touchInterface() {
+
+		return ! this.keyboardDetected && Boolean( window.matchMedia?.( '(pointer: coarse)' ).matches );
+
+	}
 
 	setHelicopterTouchMode( active ) {
 
