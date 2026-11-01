@@ -1,4 +1,5 @@
-export const SHIFT_INTERVAL_MS=60000,SHIFT_TRANSITION_MS=2400,SHIFT_TOWER_COUNT=80;
+import {NEON_SHIFT_LOTS,NEON_TOWER_JITTER,NEON_TOWER_MAX_WIDTH} from './NeonShiftLots.js';
+export const SHIFT_INTERVAL_MS=60000,SHIFT_TRANSITION_MS=2400,SHIFT_TOWER_COUNT=NEON_SHIFT_LOTS.length;
 export const SHIFT_THEMES=Object.freeze([
  {name:'RAIN CITY',accent:'#23eaff',second:'#ff369f',third:'#ffbe55',body:'#10202e'},
  {name:'CIRCUIT ARENA',accent:'#27faff',second:'#ff9c30',third:'#97fbff',body:'#071723'},
@@ -16,9 +17,9 @@ export function neonShiftLayout(generation){
  const random=()=>{seed+=0x6d2b79f5;let n=seed;n=Math.imul(n^n>>>15,n|1);n^=n+Math.imul(n^n>>>7,n|61);return((n^n>>>14)>>>0)/4294967296;};
  const theme=generation%SHIFT_THEMES.length,towers=[];
  for(let i=0;i<SHIFT_TOWER_COUNT;i++){
-  const side=i%4,along=(Math.floor(i/4)%10-4.5)*13+(random()-.5)*7,across=40+Math.floor(i/40)*27+(random()-.5)*6;
-  const width=theme===1?3+random()*3:theme===2?7+random()*5:5+random()*5,depth=3+random()*6;
-  towers.push({x:side===0?across:side===1?-across:along,z:side===2?across:side===3?-across:along,width,depth,height:theme===0?25+random()*75:theme===1?18+random()*55:12+random()*48,color:Math.floor(random()*3),side});
+  const lot=NEON_SHIFT_LOTS[i],x=lot.x+(random()*2-1)*NEON_TOWER_JITTER,z=lot.z+(random()*2-1)*NEON_TOWER_JITTER;
+  const width=theme===1?3+random()*3:theme===2?6+random()*2:4+random()*4,depth=3+random()*5;
+  towers.push({lotId:lot.id,x,z,width:Math.min(width,NEON_TOWER_MAX_WIDTH),depth:Math.min(depth,NEON_TOWER_MAX_WIDTH),height:theme===0?25+random()*75:theme===1?18+random()*55:12+random()*48,color:Math.floor(random()*3)});
  }
  return{generation,theme,palette:SHIFT_THEMES[theme],towers};
 }

@@ -134,7 +134,7 @@ async function init(){
    'Find the gold Table Tennis Room doorway beside the Dock portal in the warehouse. Move around it to see the room, then walk through when its view is ready.',
    'In the Table Tennis Room, walk within the room boundaries and around the table. Return through the same gold doorway.',
    'The Dock doorway leads to Bracken Quay Dock. Walk back through its doorway to return to the warehouse.',
-   'The violet Neon Shift doorway leads to a procedural city that reshapes every minute. Its arrival plaza and Warehouse return gate stay fixed.',
+   'Walk the streets through the violet Neon Shift doorway. Towers reshape every minute above permanent building ground floors. Follow the Warehouse landmark back to the return gate.',
    'Press E near a computer. At the TV, press E, then Play on TV. Return to game keeps it playing; press E again to control or stop it. Using a computer stops the TV.',
    'Microduck is your local companion for this browser session. It explores the warehouse, visits the Table Tennis Room through the gold doorway and returns.',
    'This is a public single-player tour. No owner connection or visitor permission setup is needed.',
