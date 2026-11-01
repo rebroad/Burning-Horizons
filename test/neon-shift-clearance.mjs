@@ -2,12 +2,15 @@ import test from 'node:test';import assert from 'node:assert/strict';import fs f
 import {loadWorldSource,describeRuntimeWorld,createNativeIslandResourceReader,portalWorldPoint,mapPortalPoint,sweepPortalCapsule} from '../src/world-runtime/vendor/world-engine-contract.js';
 import {SHIFT_WORLD_ID,SHIFT_REGION_ID,SHIFT_WAREHOUSE_PORTAL_ID,SHIFT_RETURN_PORTAL_ID,SHIFT_CONTENT_DIGEST,SHIFT_WAREHOUSE_CONTENT_DIGEST} from '../src/world-runtime/ShiftingWorldProfile.js';
 import {NEON_SHIFT_LOTS,assertNeonShiftFoundations} from '../src/world-runtime/NeonShiftLots.js';
+import {createNeonStreetBoundary,installNeonStreetClearance} from '../src/world-runtime/NeonStreetBoundary.js';
 import {Player} from '../src/player/Player.js';
 import {Colliders} from '../src/world/Colliders.js';import {Vector3} from '../src/engine/index.js';import {NativeIslandTerrain} from '../src/world-runtime/NativeIslandTerrain.js';import {readNativeIslandSource} from '../src/world-runtime/NativeIslandSource.js';import {NativeIslandTiles} from '../src/world-runtime/NativeIslandTiles.js';import {PublicPortalRuntime} from '../src/world-runtime/PublicPortalRuntime.js';import {Navigation} from '../src/npc/Navigation.js';
 const source=new URL('../../opening-world/',import.meta.url),read=base=>async p=>new Uint8Array(await fs.readFile(new URL(p,base)));
 const warehouse=await loadWorldSource({kind:'local',read:read(source)},{expectedContentDigest:SHIFT_WAREHOUSE_CONTENT_DIGEST}),shift=await loadWorldSource({kind:'local',read:read(new URL('worlds/neon-shift/',source))},{expectedWorldId:SHIFT_WORLD_ID,expectedContentDigest:SHIFT_CONTENT_DIGEST});
 function candidate(loaded){const d=describeRuntimeWorld(loaded.project),colliders=new Colliders();for(const b of d.boxes)colliders.addBox(new Vector3(...b.center),new Vector3(...b.half),0,{walkable:b.walkable,solid:b.solid,tag:b.id});return {project:loaded.project,terrain:d.terrain,colliders};}
 const wc=candidate(warehouse),sc=candidate(shift),wp=warehouse.project.portals.find(p=>p.id===SHIFT_WAREHOUSE_PORTAL_ID),rp=shift.project.portals.find(p=>p.id===SHIFT_RETURN_PORTAL_ID);
+// Match the installed pinned runtime, not only its authored source boxes.
+sc.terrain=createNeonStreetBoundary(sc.terrain);installNeonStreetClearance(sc.colliders);
 const native=await readNativeIslandSource(warehouse.project,createNativeIslandResourceReader(warehouse.project,warehouse.nativeIslandRead)),terrain=new NativeIslandTerrain({...native.domain,coarse:native.coarse}),cache=new NativeIslandTiles({tiles:native.tiles,readTile:native.readTile,onLoad:(t,d)=>terrain.apply(t,d)});terrain.cache=cache;wc.terrain=terrain;const release=await cache.ensureAt(wp.position[0],wp.position[2],4);
 // The 7e-8 m inset below only avoids exact-edge trig rounding in the aperture
 // predicate. Capsule clearance covers the entire 1.4 m usable band to that tolerance.
