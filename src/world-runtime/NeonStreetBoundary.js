@@ -21,8 +21,29 @@ export function createNeonStreetBoundary(terrain){
   // Invalid prior ownership cannot be repaired by clamping or teleporting a pose.
   if(!finite(old)||!supportsFootprint(old.x,old.z,r)||!Number.isFinite(terrain.heightAt(old.x,old.z))||old.y<terrain.heightAt(old.x,old.z)-.08)throw Error('Prior player pose is outside the fixed Neon streets');
   if(!finite(next))throw Error('Invalid Neon street movement');
-  const valid=supportsFootprint(next.x,next.z,r)&&NEON_SHIFT_LOTS.every(lot=>segmentRectDistance(old,next,lot)>r);
-  if(!valid){next.x=old.x;next.z=old.z;}return valid;
+  const validSegment=p=>supportsFootprint(p.x,p.z,r)&&NEON_SHIFT_LOTS.every(lot=>segmentRectDistance(old,p,lot)>r);
+  if(validSegment(next))return true;
+  // A valid old pose may be nearer the .35m support edge than the .4m physical
+  // contact radius. Retain only a fully validated tangential axis component.
+  // Its endpoint may remain below .4m but always clears the strict .35m guard.
+  const desired={x:next.x,y:next.y,z:next.z},projections=[{x:old.x,y:next.y,z:next.z},{x:next.x,y:next.y,z:old.z}].filter(p=>Math.hypot(p.x-old.x,p.z-old.z)>1e-9&&validSegment(p));
+  projections.sort((a,b)=>(a.x-desired.x)**2+(a.z-desired.z)**2-((b.x-desired.x)**2+(b.z-desired.z)**2));
+  if(projections.length){next.x=projections[0].x;next.z=projections[0].z;return true;}
+  next.x=old.x;next.z=old.z;return false;
  }
  return Object.freeze({...terrain,heightAt:(x,z)=>terrain.heightAt(x,z),supportsFootprint,assertPlayerPose,assertMovementMode,constrainPlayer});
+}
+
+export const NEON_STREET_CAPSULE_RADIUS=.4;
+const clearanceInstalled=new WeakSet();
+/** Align local physical wall sliding with the .35m analytic street footprint.
+ * The .05m margin improves ordinary corner sliding at the public .05s / 6.2m/s limit.
+ * Ideal isolated-circle chord bounds guide this margin; resolved segments and
+ * any partial slides still require the full analytic guard above. */
+export function installNeonStreetClearance(colliders){
+ if(typeof colliders?.resolveCapsule!=='function')throw Error('Neon street clearance requires colliders');
+ if(clearanceInstalled.has(colliders))return colliders;
+ const resolve=colliders.resolveCapsule;
+ colliders.resolveCapsule=function(position,radius,...args){return resolve.call(this,position,Math.max(NEON_STREET_CAPSULE_RADIUS,radius),...args);};
+ clearanceInstalled.add(colliders);return colliders;
 }

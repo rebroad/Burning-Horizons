@@ -1,5 +1,5 @@
 import {NEON_SHIFT_LOTS,NEON_FOUNDATION_HEIGHT,NEON_STREET_LIMIT,NEON_TOWER_BASE_Y,assertNeonShiftFoundations} from './NeonShiftLots.js';
-import {createNeonStreetBoundary} from './NeonStreetBoundary.js';
+import {createNeonStreetBoundary,installNeonStreetClearance} from './NeonStreetBoundary.js';
 import {T} from './vendor/world-engine-contract.js';
 import {SHIFT_WORLD_ID,SHIFT_CONTENT_DIGEST} from './ShiftingWorldProfile.js';
 import {SHIFT_TOWER_COUNT,neonShiftFrame,neonShiftLayout} from './NeonShiftLayout.js';
@@ -10,7 +10,7 @@ export function installNeonShiftWorld(candidate,loaded){
  if(loaded?.identity?.worldId!==SHIFT_WORLD_ID)return null;
  if(loaded.identity.contentDigest!==SHIFT_CONTENT_DIGEST)throw Error('Neon Shift content pin mismatch');
  const project=candidate.project??candidate.descriptor?.project;assertNeonShiftFoundations(project);
- candidate.terrain=createNeonStreetBoundary(candidate.terrain);
+ candidate.terrain=createNeonStreetBoundary(candidate.terrain);installNeonStreetClearance(candidate.colliders);
  // Replace only the verified source foundation visuals. Preserve colliders and
  // resources shared with surviving nodes; retire old LOD variants before preparation.
  const ids=new Set(NEON_SHIFT_LOTS.map(lot=>lot.id)),oldNodes=[];candidate.root.traverse(n=>{if(ids.has(n.userData.editorObjectId))oldNodes.push(n);});
