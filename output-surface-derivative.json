@@ -1,6 +1,6 @@
 {
   "schema": "elsemesh.output-surface-derivative/1",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "integration": "bounded-opt-in",
   "limitations": [
     "Only explicitly registered ordinary render targets use this output policy; default, XR and unregistered offscreen targets retain their existing behavior.",
@@ -14,36 +14,43 @@
   },
   "transform": {
     "path": "tools/output-surface-transform.mjs",
-    "version": "1.0.0",
-    "sha256": "2dccb420c87deab0ed7508cbd4989a20112b2e0f558c9790ef9d6160eaf93ab9",
+    "version": "1.1.0",
+    "sha256": "5d93d96fe5ba7a1e2f0976ccc206ffeb26f1ad01d94b0cb29c9ec59d1e555c20",
     "edits": [
       "renderer-owned registration",
       "unlit colors",
       "program tone mapping",
       "program output color",
       "draw output color",
-      "draw tone mapping"
+      "draw tone mapping",
+      "equivalent GLB accessor scans"
     ]
   },
+  "geometryScanner": {
+    "path": "tools/glb-accessor-scan.mjs",
+    "sha256": "3c0677ecaa146c8bc34e89daf8f31639783bb7f5262849c14a075f57b14b7f60"
+  },
   "transformedModule": {
-    "sha256": "037f6dea42d7d076530362fed49dc96d222793e04e97c22c5cff176a3b8d0fd7",
+    "sha256": "da0f35b41687aa8d471ac5ca9136bf000c68d6eec48145f95601326f1004467b",
     "chunks": [
-      "assets/world-engine-contract-CVcMZ1Us.js"
+      "assets/world-engine-contract-C3e-C6LY.js"
     ]
   },
   "finalChunks": {
-    "assets/Colliders-u7qqebLy.js": "5c513d01330b57d2db44907fc7eb26434573d8b93f92099ca5ed9b826c9c44ab",
-    "assets/main-BAaVBpT_.js": "789d47ea4d9c3d8c9e949330a2718d28ee576da850fa2d05f19f7e0d7421c096",
+    "assets/addon-fit-DIOBYJe3.js": "869fc33ba8669f6b9e43d79ce5c227a6071b5b41b6e22db630879e0b68fdde6e",
+    "assets/Colliders-B7TxXLIb.js": "9f57179d10f7efd9075fd0cbd1005e5815033b085637d27e2c544d7a180fb915",
+    "assets/main-BX1Yzpe1.js": "e65b9e835b88cbdc9f84005336dea8e527d8d4f27a5aeae5ab6345928f9abd3d",
     "assets/PlayerEyeControls-CWnrbWq1.js": "007010d9cec58fd310bd4fd5a32849792307e716175d03ccc919cdab944d65d2",
     "assets/PlayerEyePanel-DRdLArCK.js": "0f23f6d155c6c9a507ca0730fcd27add967a3c44b71f16b5fd4a8a59182dadc6",
     "assets/PlayerEyeView-DvEGwbv3.js": "efe7fae17e59db0b69d6a8d20e467f15793160cfc815e02fdbcfd0dcd4cd9d18",
     "assets/RepositoryPlayerEyes-BXZVQ6pq.js": "4986d0f5b08c8ed55a033dd86eecad1ab598c2222ecf19d63f171fbd7fe8401a",
-    "assets/spark.module-C6xmu7Sr.js": "e7703b7f7cf4b376e44d3e94a36eaddda805609f2533e269f978b52c40c1df0a",
-    "assets/SplatScenePhysics-BszIUdlc.js": "58482c966b875f63327a41178b35bb15352d0b2662cbafe0cb651fc37a217bcf",
-    "assets/WebGLPlayerEyeRenderer-BTugMbaY.js": "2a9795dfa607ccc4ba836781ebc7b4183cb961ebd6a5e048097ee90fbf4c9e8c",
-    "assets/WebGLPortalViews-HrOKXJ8o.js": "200cf36dacf413ccb5642715a4a67fd09271af906a4584021c2f1e7f45ed3b95",
-    "assets/WebGLRepositoryScene-qDnWkogL.js": "6433039ca8839610a005f4c224a37ea19e6baaebf69e318ec77c39d1201914f7",
-    "assets/world-engine-contract-CVcMZ1Us.js": "b0089ce1cba2470f57b54b86c49317b4b031d29dc9dda4164dd37ffda01ca8a1"
+    "assets/spark.module-Co5oRM7g.js": "f16a360d1a923081a4343fcaf03a9063c21667b208453f26da4355e0a6286618",
+    "assets/SplatScenePhysics-DedW_Dpl.js": "be29f57ceadb9bf8a5181c0a4296b7ca474906f5b3539bc94201061bc42fe317",
+    "assets/WebGLPlayerEyeRenderer-G_JPVdFC.js": "7f194259b7fe75dcd644c8ccfcac5d06055d8f6bc55e6c1678df3bd8794210bd",
+    "assets/WebGLPortalViews-CK70AmHq.js": "da58aba9d91f79d68580246bc2ad93cbd52cda787a3f0cc81f646c04576b343f",
+    "assets/WebGLRepositoryScene-_9Nmax_p.js": "d2ee44c5360abf6cd747d72b29935d79654ecfe9151f0d99651dac96d4c05e20",
+    "assets/world-engine-contract-C3e-C6LY.js": "6f8d2f052d7d4c90e671ee9255b4b6f808f760fdd5aca6bb212b45ff3f6afad5",
+    "assets/xterm-BMsy1fDS.js": "c3486a738e868fc70309aa552bb70fd02630160cf17cb3ac1d7be34904800adc"
   },
   "scope": "The source hash identifies normalized unchanged upstream bytes. Transform, derivative module and final chunk hashes identify distinct downstream artifacts."
 }

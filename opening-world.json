@@ -1,7 +1,7 @@
 {
   "schema": "elsemesh.opening-world/2",
-  "repository": "https://github.com/lozknowles/elsemesh-world-loz-opening-island/tree/e36d616209f0ae53c9272ddd401177a43bdf49e1",
+  "repository": "https://github.com/lozknowles/fred/tree/5b459c62a92ead5cdc3d499caf0c7d07426b12bf",
   "worldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
-  "contentDigest": "0d7523d63ed10dcd9acbbc0b713c8719ecb28eda18e6bf9cbc607760c8105b08",
-  "bundlePath": "worlds/0d7523d63ed10dcd9acbbc0b713c8719ecb28eda18e6bf9cbc607760c8105b08/"
+  "contentDigest": "5933d445246a3ee4c2a0c79a0e9e42630b6bec89db48c9ad32318f56f8976172",
+  "bundlePath": "worlds/5933d445246a3ee4c2a0c79a0e9e42630b6bec89db48c9ad32318f56f8976172/"
 }

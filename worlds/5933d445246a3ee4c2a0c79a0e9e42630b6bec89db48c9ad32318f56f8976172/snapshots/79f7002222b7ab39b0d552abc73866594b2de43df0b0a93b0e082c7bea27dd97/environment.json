@@ -1,0 +1,11 @@
+{
+  "sunAzimuth": 2.2,
+  "sunElevation": 0.8,
+  "fog": 0.0007,
+  "skyColor": "#8ebac7",
+  "timeOfDay": 14,
+  "cloudCoverage": 0.35,
+  "mistDensity": 0.0004,
+  "weather": "clear",
+  "mistHeight": 18
+}
