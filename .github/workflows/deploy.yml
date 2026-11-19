@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ bh-main ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -84,7 +84,7 @@ jobs:
             echo "gh-pages already matches the validated package"
             exit 0
           fi
-          git -C gh-pages-output commit -m "Publish Burning-Horizons from bh-main"
+          git -C gh-pages-output commit -m "Publish Burning-Horizons from main"
           git -C gh-pages-output push origin HEAD:gh-pages
       - uses: actions/configure-pages@v5
         if: steps.pages-mode.outputs.type == 'workflow'
