@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -70,6 +70,22 @@ jobs:
         run: |
           node tools/package-published-worlds.mjs dist pinned-public-world public-dist previous-pages
           PUBLIC_ROOM_PACKAGE=public-dist node --test test/published-world-package.mjs
+      - uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          path: gh-pages-output
+      - name: Update gh-pages from the validated package
+        run: |
+          rsync -a --delete --exclude=.git/ public-dist/ gh-pages-output/
+          git -C gh-pages-output config user.name "github-actions[bot]"
+          git -C gh-pages-output config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git -C gh-pages-output add --all
+          if git -C gh-pages-output diff --cached --quiet; then
+            echo "gh-pages already matches the validated package"
+            exit 0
+          fi
+          git -C gh-pages-output commit -m "Publish Burning-Horizons from bh-main"
+          git -C gh-pages-output push origin HEAD:gh-pages
       - uses: actions/configure-pages@v5
         if: steps.pages-mode.outputs.type == 'workflow'
       - uses: actions/upload-pages-artifact@v3
