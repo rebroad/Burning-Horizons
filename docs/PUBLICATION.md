@@ -2,7 +2,7 @@
 
 ## Current release identity
 
-Play the current Fred site at <https://hpubuntu.taila22e8a.ts.net:8443/>. The public source repository is <https://github.com/lozknowles/fred>. The [matching release](https://github.com/lozknowles/fred/releases/tag/fred-warehouse-2026-11-19) provides the [playable static archive](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/release-tv-fix-cd8cddd6eab4-20261118.tgz), its [deployment manifest](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/release-tv-fix-cd8cddd6eab4-20261118-manifest.json), a separate packaging bootstrap and [SHA256SUMS](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/SHA256SUMS).
+Play Burning-Horizons at <https://rebroad.github.io/Burning-Horizons/>. Source: <https://github.com/rebroad/Burning-Horizons>. The [matching release](https://github.com/lozknowles/fred/releases/tag/fred-warehouse-2026-11-19) provides the [playable static archive](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/release-tv-fix-cd8cddd6eab4-20261118.tgz), its [deployment manifest](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/release-tv-fix-cd8cddd6eab4-20261118-manifest.json), a separate packaging bootstrap and [SHA256SUMS](https://github.com/lozknowles/fred/releases/download/fred-warehouse-2026-11-19/SHA256SUMS).
 
 | Component | Release revision | Development branch |
 | --- | --- | --- |

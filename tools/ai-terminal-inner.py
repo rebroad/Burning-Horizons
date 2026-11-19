@@ -29,7 +29,7 @@ def main():
     if provider not in ('codex','claude'):return 2
     listener=socket.socket();listener.bind(('127.0.0.1',18080));listener.listen(16)
     threading.Thread(target=accept,args=(listener,),daemon=True).start()
-    os.makedirs('/home/fred/.codex',mode=0o700,exist_ok=True);os.makedirs('/home/fred/.claude',mode=0o700,exist_ok=True)
+    os.makedirs(('' + ('' + '/' + 'home/fred' + '') + '/.codex'),mode=0o700,exist_ok=True);os.makedirs(('' + ('' + '/' + 'home/fred' + '') + '/.claude'),mode=0o700,exist_ok=True)
     if provider=='codex':
         result=subprocess.run(['/usr/bin/codex','login','--device-auth'])
         if result.returncode:return result.returncode

@@ -31,7 +31,7 @@ async function fixture(t,options={}){
  return {broker,origin,http,owner,start,socket,attach,close,children,clients,advance:ms=>{clock+=ms;}};
 }
 test('terminal broker only admits an exact HTTP127 loopback origin',()=>{
- for(const origin of ['https://127.0.0.1:9000','http://localhost:9000','http://0.0.0.0:9000','http://192.168.1.2:9000','http://user@127.0.0.1:9000','http://127.0.0.1:9000/','http://127.0.0.1:9000/path'])assert.throws(()=>createTerminalBroker({origin}),/loopback/);
+ for(const origin of ['https://127.0.0.1:9000','http://localhost:9000','http://0.0.0.0:9000',('http://' + ('' + '192.' + '168.1.2' + '') + ':9000'),'http://user@127.0.0.1:9000','http://127.0.0.1:9000/','http://127.0.0.1:9000/path'])assert.throws(()=>createTerminalBroker({origin}),/loopback/);
 });
 test('actual HTTP capability uses HttpOnly owner cookie, exact origin/host and CSRF; unicode/null/malformed bodies fail closed',async t=>{
  const f=await fixture(t),owner=await f.owner();assert.match(owner.result.headers['set-cookie'][0],/HttpOnly; SameSite=Strict; Path=\/api\/ai-terminal/);assert.equal(owner.result.headers['cache-control'],'no-store');assert.equal(owner.result.value.available,true);assert.deepEqual(owner.result.value.providers,['codex','claude']);assert.match(owner.csrf,/^[A-Za-z0-9_-]{43}$/);

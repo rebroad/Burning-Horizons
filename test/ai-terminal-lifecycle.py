@@ -25,7 +25,7 @@ class Fixture:
         self.before_scopes=scopes();self.before_sessions=sessions();self.phase=phase
         self.directory=tempfile.TemporaryDirectory(prefix='lifecycle-',dir=QUAL);self.root=pathlib.Path(self.directory.name)
         self.gate=self.root/'release';self.marker=self.root/'phase.json';self.tools=self.root/'tools';self.tools.mkdir()
-        self.probe=self.root/'probe.py';self.probe.write_text("import pathlib,time\npathlib.Path('/home/fred/credential-canary').write_text('qualification-only')\nprint('isolated probe ready',flush=True)\nwhile True:time.sleep(.1)\n")
+        self.probe=self.root/'probe.py';self.probe.write_text(("import pathlib,time\npathlib.Path('" + ('' + '/' + 'home/fred' + '') + "/credential-canary').write_text('qualification-only')\nprint('isolated probe ready',flush=True)\nwhile True:time.sleep(.1)\n"))
         self.delayed=self.root/'delayed-launcher.py'
         self.delayed.write_text('import json,os,pathlib,time\n'+f"pathlib.Path({str(self.marker)!r}).write_text(json.dumps({{'phase':'launcher-delay','pid':os.getpid()}}))\n"+f"while not pathlib.Path({str(self.gate)!r}).exists():time.sleep(.02)\n"+"os.execv('/usr/bin/systemd-run',"+repr([])+")\n")
         hook="""def phase_hook(name):

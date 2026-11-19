@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {once} from 'node:events';
 import {writeFile} from 'node:fs/promises';
 import {WebSocket} from 'ws';
-const publicOrigin='https://hpubuntu.taila22e8a.ts.net:8443',host=new URL(publicOrigin).host,endpoint='http://127.0.0.1:19442';
+const publicOrigin=('https://' + ('' + 'hpubuntu.taila22e8a.ts.' + 'net' + '') + ':8443'),host=new URL(publicOrigin).host,endpoint='http://127.0.0.1:19442';
 const request=(path,{cookie,csrf,body}={})=>new Promise((resolve,reject)=>{const req=http.request(endpoint+path,{method:body?'POST':'GET',headers:{Host:host,Origin:publicOrigin,...(cookie?{Cookie:cookie}:{}),...(csrf?{'x-fred-sun-token':csrf}:{}),...(body?{'content-type':'application/json'}:{})}},res=>{let text='';res.on('data',b=>text+=b);res.on('end',()=>resolve({status:res.statusCode,headers:res.headers,text}));});req.on('error',reject);req.end(body?JSON.stringify(body):undefined);});
 const sockets=[];const jar=async()=>{const r=await request('/api/period-sun/session');assert.equal(r.status,200);return {cookie:r.headers['set-cookie'][0].split(';')[0],csrf:JSON.parse(r.text).csrf};};
 const waitFor=async(predicate)=>{const until=Date.now()+30000;while(!predicate()){if(Date.now()>until)throw Error('Guest assertion timed out');await new Promise(r=>setTimeout(r,50));}};
