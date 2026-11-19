@@ -112,16 +112,16 @@ test('publication filesystem failures redact absolute roots and private filename
   });
 });
 
-test('private file classes and existing project/asset restrictions remain enforced', t => {
+test('private file classes and excluded asset restrictions remain enforced', t => {
   const { root, write } = fixture(t);
   for (const rel of ['.env', '.env.local', 'operator.env', '.publication-private-terms.txt', 'secret.key', 'audit-evidence/report.txt']) write(rel);
   write('deploy/online.env.example', 'HOST=localhost');
   write('.env.example', 'HOST=localhost');
   write('public/models/port/delorean-model.bin');
-  write('old.md', 'burning' + '-' + 'horizons');
+  write('README.md', 'Burning-Horizons');
   const { issues } = scanPublicationTree(root);
   assert.equal(issues.filter(issue => issue.includes('private file class')).length, 7); // evidence directory plus its file
   assert.ok(!issues.some(issue => issue.includes('.env.example')));
   assert.ok(issues.some(issue => issue.includes('excluded asset')));
-  assert.ok(issues.some(issue => issue.includes('old project naming')));
+  assert.ok(!issues.some(issue => issue.includes('old project naming')));
 });

@@ -64,7 +64,6 @@ export function scanPublicationTree(root, terms = []) {
       if (textExtensions.test(rel) || ['LICENSE', 'Dockerfile', 'Makefile', '.gitignore', '.gitattributes'].includes(entry.name)) {
         textFiles++;
         const text = fs.readFileSync(file, 'utf8');
-        if (/burning[\s_-]*horizons|\bBH_|\bbh[.\-_:]/i.test(text)) issues.push(`${label}: old project naming`);
         for (const finding of privacyFindings(text, terms)) issues.push(`${label}: ${finding}`);
       }
     }
