@@ -7,40 +7,40 @@ export const DOCK_CONTENT_DIGEST='36e60f42dffa422ef20dce60a14a9da238ccce49eb96e2
 export const DOCK_SOURCE_COMMIT='fbc9f7e352b03b18d96ad428742770f844fcfc0d';
 export const DOCK_NOTICE_PINS={
   "NOTICE": {
-    "sha256": "18b8fcc22a8ddb49420f9307bcd7b596d771c96c96244930fe7d5bc9fcb451a8",
-    "bytes": 565
+    "sha256": "277949b3e42b8ecb399d2287c7b7e06f423d7309299845bdbcf547c0f40dfe3a",
+    "bytes": 562
   },
   "ATTRIBUTION.md": {
-    "sha256": "c8b21e30b01f356d7259a3adc8fa018d5475a0ec7ca6994d18c28747f9ef23ca",
-    "bytes": 970
+    "sha256": "4e0b6723adfd4d5538ab58dc30a82cb200e664e674ba2e285eed21a02a137ea3",
+    "bytes": 958
   },
   "LICENSE": {
-    "sha256": "bf7d406711a4cbf9af0b9eb5f2cf464ae88053e999e0e64a92b3423494dd8699",
-    "bytes": 1104
+    "sha256": "413204504456b6b29e99d565629023e9aeee5916907e41fe8ffe8549219348ec",
+    "bytes": 1083
   },
   "README.md": {
     "sha256": "263060e834781975723b35892182fcdfc9ee5d869acd8a15aacef9ae5924aae6",
     "bytes": 1140
   },
   "models/port/CREDITS.md": {
-    "sha256": "da13fb002363a77a801ab7bd6b7968757c8667dee13b15cf95b34b5be104001b",
-    "bytes": 3943
+    "sha256": "18a5fa138ff37d94996875f32de17bd777b47eb3fd3f40ec1921818a24e23359",
+    "bytes": 3866
   },
   "models/port/licensing/README.md": {
-    "sha256": "07cbb63cc7ced8595ebfe586d8f3f3e46651a0a60ceffdb5733d039ddb99b1ee",
-    "bytes": 971
+    "sha256": "a16f12393846298ae5b25d32c46befeec77b866bc5a6d1e1ec9be29005636437",
+    "bytes": 966
   },
   "models/port/licensing/original-openx-source-package.zip": {
     "sha256": "b234d510ce334062207ad86745c15938a97be6743a2639f5fdeead8804b8d34c",
     "bytes": 4937933
   },
   "models/port/licensing/licenses/MPL-2.0.txt": {
-    "sha256": "9303ea1cfbf049945652668089d753fb1a7e1f2e52c680615c3d2cea7515c118",
-    "bytes": 17100
+    "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172",
+    "bytes": 16727
   },
   "models/port/licensing/licenses/CC-BY-4.0.txt": {
-    "sha256": "4500200b91acb1324538d8e8f9665d5f4142d3f1c5cd9730564cf1895b6170f7",
-    "bytes": 17179
+    "sha256": "d557539df68e771cc1eedcc91d13f70fca930e508d11eedcafa4b15db49e3744",
+    "bytes": 17023
   }
 };
 const activePath=/^(?:world\.json|snapshots\/[a-f0-9]{64}\/[a-z-]+\.json|assets\/[a-f0-9]{64}\.glb)$/;
@@ -60,7 +60,7 @@ export async function readDockPublication(sourceRoot,{tracked}={}){
   if(tracked&&!tracked.has('worlds/dock/'+relative))throw Error('Uncommitted public Dock file');
   let full=root;for(const segment of relative.split('/')){full=path.join(full,segment);if((await fs.lstat(full)).isSymbolicLink())throw Error('Symlink in Dock source');}
   const info=await fs.lstat(full),resolved=await fs.realpath(full);if(!info.isFile()||!resolved.startsWith(root+path.sep)||info.size>limit)throw Error('Dock source confinement or size');
-  const bytes=new Uint8Array(await fs.readFile(full));if(!files.has(relative)){total+=bytes.length;if(total>16*1024*1024||files.size>=32)throw Error('Dock package budget');files.set(relative,bytes);}return bytes;
+  const sourceBytes=new Uint8Array(await fs.readFile(full));const textPin=Object.hasOwn(DOCK_NOTICE_PINS,relative)&&!relative.endsWith('.zip');const bytes=textPin?new Uint8Array(Buffer.from(new TextDecoder('utf-8',{fatal:true}).decode(sourceBytes).replace(/\r\n?/g,'\n'))):sourceBytes;if(!files.has(relative)){total+=bytes.length;if(total>16*1024*1024||files.size>=32)throw Error('Dock package budget');files.set(relative,bytes);}return bytes;
  }
  const manifestBytes=await read('world.json',64*1024);if(await repositoryDigest(manifestBytes)!==DOCK_CONTENT_DIGEST)throw Error('Dock curated manifest changed');
  const manifest=JSON.parse(new TextDecoder().decode(manifestBytes));if(manifest.provenance?.sourceCommit!==DOCK_SOURCE_COMMIT)throw Error('Dock source provenance changed');
