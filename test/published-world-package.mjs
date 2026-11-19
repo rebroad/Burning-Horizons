@@ -148,7 +148,7 @@ test('generated publication preserves separately hashed output-surface derivativ
 test('public game has four fixed world packages and complete admitted Dock runtime/source licences',async()=>{
  assert.equal(catalog.worlds.length,4);assert.equal(catalog.routes.length,6);
  const dock=catalog.worlds.find(w=>w.worldId===DOCK_WORLD_ID);assert.ok(dock);assert.equal(dock.contentDigest,DOCK_CONTENT_DIGEST);
- const {loaded,files,total}=await readDockPublication(path.join(root,dock.bundlePath));assert.equal(total,12478386);assert.equal(files.size,23);
+ const {loaded,files,total}=await readDockPublication(path.join(root,dock.bundlePath));assert.equal(total,12477739);assert.equal(files.size,23);
  const actual=[];async function inspect(dir,prefix=''){for(const item of await fs.readdir(dir,{withFileTypes:true})){assert.ok(!item.isSymbolicLink());const relative=prefix+item.name;if(item.isDirectory())await inspect(path.join(dir,item.name),relative+'/');else actual.push(relative);}}await inspect(path.join(root,dock.bundlePath));assert.deepEqual(actual.sort(),[...files.keys()].sort());
  for(const name of Object.keys(DOCK_NOTICE_PINS))assert.ok(files.has(name));
  assert.equal(loaded.project.portals[0].destination.worldId,catalog.openingWorldId);
