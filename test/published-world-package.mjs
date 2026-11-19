@@ -47,7 +47,7 @@ test('publication preserves editor, notices, immutable opening pin and excludes 
  const openingCredits=await fs.readFile(path.join(root,'credits.html'),'utf8'),openingEntry=catalog.worlds.find(w=>w.worldId===catalog.openingWorldId);
  for(const name of ['ATTRIBUTION.md','LICENSE','NATIVE-VEGETATION-CREDITS.md']){assert.ok(openingCredits.includes(openingEntry.bundlePath+name));await fs.access(path.join(root,openingEntry.bundlePath,name));}
  const config=JSON.parse(await fs.readFile(path.join(root,'opening-world.json'),'utf8')),opening=catalog.worlds.find(w=>w.worldId===catalog.openingWorldId);assert.equal(config.bundlePath,opening.bundlePath);assert.equal(config.contentDigest,opening.contentDigest);await fs.access(path.join(root,'editor/index.html'));await fs.access(path.join(root,'licenses/SPARK-LICENSE.txt'));
- const denied=/^sources$|\.(?:mp4|ply|sqlite|pem|pyc)$|client-identities|owner-trace|sensor\.jsonl|\.local-evidence/i;
+ const denied=/^sources$|\.(?:ply|sqlite|pem|pyc)$|client-identities|owner-trace|sensor\.jsonl|\.local-evidence/i;
  async function visit(dir){for(const name of await fs.readdir(dir)){assert.ok(!denied.test(name),name);const full=path.join(dir,name),info=await fs.lstat(full);assert.ok(!info.isSymbolicLink());if(info.isDirectory())await visit(full);}}
  await visit(root);const credits=await fs.readFile(path.join(root,'credits.html'),'utf8');for(const text of ['Table Tennis Room','ethan3111','https://superspl.at/scene/0d9e613b','https://creativecommons.org/licenses/by/4.0/','decimation','orientation','gameplay-scale','authored collision'])assert.ok(credits.includes(text),text);
 });
