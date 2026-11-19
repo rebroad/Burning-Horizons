@@ -49,10 +49,10 @@ jobs:
       - name: Read immutable public world revision
         id: world-pin
         run: |
-          node --input-type=module -e 'import fs from "node:fs"; import {validateOpeningWorld} from "./src/world-runtime/OpeningWorld.js"; const {source}=validateOpeningWorld(JSON.parse(fs.readFileSync("public/opening-world.json","utf8"))); if(source.owner!=="lozknowles"||source.repository!=="elsemesh-world-loz-opening-island"||source.path)throw Error("Unexpected public world source"); console.log("revision="+source.ref);' >> "$GITHUB_OUTPUT"
+          node --input-type=module -e 'import fs from "node:fs"; import {validateOpeningWorld} from "./src/world-runtime/OpeningWorld.js"; const {source}=validateOpeningWorld(JSON.parse(fs.readFileSync("public/opening-world.json","utf8"))); if(source.owner!=="lozknowles"||source.repository!=="fred"||source.path)throw Error("Unexpected public world source"); console.log("revision="+source.ref);' >> "$GITHUB_OUTPUT"
       - uses: actions/checkout@v4
         with:
-          repository: lozknowles/elsemesh-world-loz-opening-island
+          repository: lozknowles/fred
           ref: ${{ steps.world-pin.outputs.revision }}
           path: pinned-public-world
       - uses: actions/checkout@v4
