@@ -20,13 +20,28 @@
       "assets/xterm-BMsy1fDS.js": "c3486a738e868fc70309aa552bb70fd02630160cf17cb3ac1d7be34904800adc"
     },
     "compatibility": {
+      "assets/Colliders-B7TxXLIb.js": "9f57179d10f7efd9075fd0cbd1005e5815033b085637d27e2c544d7a180fb915",
+      "assets/PlayerEyeControls-CWnrbWq1.js": "007010d9cec58fd310bd4fd5a32849792307e716175d03ccc919cdab944d65d2",
+      "assets/PlayerEyePanel-DRdLArCK.js": "0f23f6d155c6c9a507ca0730fcd27add967a3c44b71f16b5fd4a8a59182dadc6",
+      "assets/PlayerEyeView-DvEGwbv3.js": "efe7fae17e59db0b69d6a8d20e467f15793160cfc815e02fdbcfd0dcd4cd9d18",
+      "assets/RepositoryPlayerEyes-BXZVQ6pq.js": "4986d0f5b08c8ed55a033dd86eecad1ab598c2222ecf19d63f171fbd7fe8401a",
+      "assets/SplatScenePhysics-CjWLvl1Y.js": "37c05465789c130ba3f8f00bb56891f95c8308150722965c6625bed062454bc9",
       "assets/SplatScenePhysics-DnwdxMwA.js": "cffd6f1f388a979e70461b469c3ebaa7461b2525e3b886b490187c86a2d331ff",
+      "assets/WebGLPlayerEyeRenderer-Rh-JytAS.js": "dff55b2b4da9b13278652bbabac20a1a0013209e3f3a8fe45ed7ce65764b9264",
+      "assets/WebGLPortalViews-Cil84lGt.js": "52b5e3265958d35799a06a4d1ed40dd96cffc5d01347a9a6331deb76e9fe5d7d",
       "assets/WebGLPortalViews-K8knYW1g.js": "7230cc9e81593b9903b2ec882dcd1a5dcdc8247229417bde5fd4066f5c18025e",
+      "assets/WebGLRepositoryScene-7whWFsNa.js": "c39e48869808febe06f4c22598a1789d55f1ff7eaf57901e7943fcf6814bb99a",
       "assets/WebGLRepositoryScene-Kr2hmB38.js": "b65a54f2a3e6af3984c5a0830660ee662d0255a484a4bf7478efb7146ab494ec",
+      "assets/addon-fit-DIOBYJe3.js": "869fc33ba8669f6b9e43d79ce5c227a6071b5b41b6e22db630879e0b68fdde6e",
+      "assets/main-BfJuoiFx.css": "a1b64ebe54223f1203bc4a4fd746c4008ab1664e9ac4578285fea28f646cbf1c",
       "assets/main-CNOK0buL.js": "36e92b11c58cf5750ee839def9775fe8be39e69904a1dc2d0e3fecc1904e86b7",
       "assets/main-DKtNMA8V.js": "6b3f9a517388a1f86ddbe8471505d9867cb208103ef5ce2bbb9542754701d83e",
+      "assets/main-uJnXcEZu.js": "0e08e959c17502046633c544c3532d88da5127bfe535eeb1b4d2783d2c0e994a",
       "assets/spark.module-BgZ7pwUd.js": "fd9e32f82ef4f43b39d3d76002b0467b51d1310a84a597a64a2578dcb036c2bf",
-      "assets/world-engine-contract-BU9EDy71.js": "9e8a17d54f4831e6ea9f639f0c7b07ed6bd32c4faf25c4a423cf460a59629a31"
+      "assets/spark.module-RWG27Svo.js": "d15c9116c265fdeedda86240943fe4940862a03c010b9cfd51a700a9e9cdeacd",
+      "assets/world-engine-contract-BU9EDy71.js": "9e8a17d54f4831e6ea9f639f0c7b07ed6bd32c4faf25c4a423cf460a59629a31",
+      "assets/world-engine-contract-xaUIVwxg.js": "53c2908d3e43861e584e95277af1d653fd7157185fd546bb29ff14139b92c54e",
+      "assets/xterm-BMsy1fDS.js": "c3486a738e868fc70309aa552bb70fd02630160cf17cb3ac1d7be34904800adc"
     }
   },
   "applicationMedia": {
@@ -38,7 +53,13 @@
       "assets/tour-portals-nL7pCfNb.mp3": "dd02db67e16ce21a751049bc6e1aae413360cda473e5ae4b9031edd0b9a5e905",
       "assets/tour-warehouse-BAiK8XcG.mp3": "ae9c31857dd7aa87eac08a1ac6f7d38011596633d28421009ecabd18c887fbc5"
     },
-    "compatibility": {}
+    "compatibility": {
+      "assets/avatar-welcome-DVUHp6Ab.mp3": "4f0b05c56e222124c727d6573f520ca571691ab541f121d72869a1c6a648487b",
+      "assets/tour-c64-DUs2amWt.mp3": "88442663dd138289491abd33c55fd5fabf3ec0f8b57c5fc7c3e41d37409e3532",
+      "assets/tour-dock-Caly83Fm.mp3": "0ae2ceb208293471a3333e0692eea22ef6e2da4e9d054cd76c5153c0f4c65930",
+      "assets/tour-portals-nL7pCfNb.mp3": "dd02db67e16ce21a751049bc6e1aae413360cda473e5ae4b9031edd0b9a5e905",
+      "assets/tour-warehouse-BAiK8XcG.mp3": "ae9c31857dd7aa87eac08a1ac6f7d38011596633d28421009ecabd18c887fbc5"
+    }
   },
   "outputSurfaceDerivative": {
     "manifest": "output-surface-derivative.json",
@@ -74,7 +95,7 @@
       "bundledWithOpening": false
     }
   ],
-  "engineCommit": "5860f2f84fbc90214e926cc805b19765ba4a71e2",
+  "engineCommit": "8fc533668465aff27e47b0173b90d3e857b4523c",
   "worldContract": {
     "sourceNormalization": "UTF-8 LF",
     "commit": "7acac33d27c917302622c9b4b745ad20399fe40e",
