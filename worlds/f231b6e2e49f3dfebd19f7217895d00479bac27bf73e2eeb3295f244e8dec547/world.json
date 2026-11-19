@@ -1,0 +1,83 @@
+{
+  "schema": "elsemesh.world-repository/3",
+  "version": 3,
+  "projectSchema": "elsemesh.worlds.project/2",
+  "engine": {
+    "commit": "d7a683838bc56921a450a6767e7bd241fa0aed0e",
+    "contract": "elsemesh.worlds.runtime/1",
+    "requires": [
+      "object-access/1",
+      "objects",
+      "portal/1",
+      "project/2",
+      "splat-scene/1",
+      "terrain"
+    ]
+  },
+  "snapshot": "b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9",
+  "components": {
+    "metadata": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/metadata.json",
+      "sha256": "f38e1488e293ce20ba07fd521ae7b279872b8658331b332d1b4f75bea2859236",
+      "bytes": 315
+    },
+    "terrain": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/terrain.json",
+      "sha256": "e049ea38550bd8760f035f34e48569025e92ec53443da95014e4734eb309e571",
+      "bytes": 59261
+    },
+    "objects": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/objects.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "features": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/features.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "environment": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/environment.json",
+      "sha256": "14cba3b448d2e02692eee7dfef01d989112455b2c1218729b2fab7b989158a37",
+      "bytes": 88
+    },
+    "spawn": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/spawn.json",
+      "sha256": "24b60a5ee5c46885db398b46070ebf76ec84325393fc129fdbf3969da5bed63a",
+      "bytes": 82
+    },
+    "geography": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/geography.json",
+      "sha256": "f1458c60dfd49fdb5f41ed852e5627e02445867a5a505e5863982b37ac6d7902",
+      "bytes": 50
+    },
+    "assets": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/assets.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "connections": {
+      "path": "snapshots/b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9/connections.json",
+      "sha256": "46ac9c91e2e00174d067bf46c52a2bd2ad89b1d920f798a9018202d4f3fe78ea",
+      "bytes": 2018
+    }
+  },
+  "world": {
+    "name": "Table Tennis Room",
+    "description": "Table Tennis Room by ethan3111 (CC BY 4.0). Local trial with assumed gameplay scale and conservative authored walk bounds.",
+    "worldId": "elsemesh.world:5c2e6618-a04a-4460-912a-bfc57bc5bbad",
+    "regionId": "elsemesh.region:d963f2f2-835c-4a4b-9296-9542c9d79a01"
+  },
+  "regions": [
+    {
+      "regionId": "elsemesh.region:d963f2f2-835c-4a4b-9296-9542c9d79a01",
+      "name": "Table Tennis Room",
+      "scene": {
+        "snapshot": "b8d4758f4f18f6aeb2179fac40ac47863e385fc34a474fca98ccf3b94e426ac9"
+      }
+    }
+  ],
+  "attribution": {
+    "authors": []
+  }
+}

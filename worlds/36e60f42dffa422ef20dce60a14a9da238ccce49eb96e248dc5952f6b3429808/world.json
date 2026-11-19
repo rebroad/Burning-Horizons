@@ -1,0 +1,96 @@
+{
+  "schema": "elsemesh.world-repository/3",
+  "version": 3,
+  "projectSchema": "elsemesh.worlds.project/2",
+  "engine": {
+    "commit": "95719848d5ffa4428b57c75c272483e1c2113a72",
+    "contract": "elsemesh.worlds.runtime/1",
+    "requires": [
+      "collision-volumes/1",
+      "object-access/1",
+      "objects",
+      "port-traffic/1",
+      "portal/1",
+      "project/2",
+      "terrain",
+      "water/1",
+      "weather"
+    ]
+  },
+  "snapshot": "3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b",
+  "components": {
+    "metadata": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/metadata.json",
+      "sha256": "4f9e7837efd083b754e567ff6d256c23c4bfa777c05d3810657b1aca6c5ee827",
+      "bytes": 306
+    },
+    "terrain": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/terrain.json",
+      "sha256": "377d640f07a7849af606f10d9f40592da71231069a372e8c566330bcb36e180a",
+      "bytes": 1073243
+    },
+    "objects": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/objects.json",
+      "sha256": "afa2a68fc22e2a5ec4a89c2eb4043ee00b4d6a59e90cf81c61adc05b5ea0b235",
+      "bytes": 13255
+    },
+    "features": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/features.json",
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+      "bytes": 3
+    },
+    "environment": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/environment.json",
+      "sha256": "49b9fe5bd4701a9f1356ac7f06710e9712789ddb4e5d80fb784415e06fe8ac65",
+      "bytes": 155
+    },
+    "spawn": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/spawn.json",
+      "sha256": "7c637dbe89d477df426a2bb97c42da2bfd0bfcae0562723454ec485fbc6a10e4",
+      "bytes": 63
+    },
+    "geography": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/geography.json",
+      "sha256": "f1458c60dfd49fdb5f41ed852e5627e02445867a5a505e5863982b37ac6d7902",
+      "bytes": 50
+    },
+    "assets": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/assets.json",
+      "sha256": "4f94e1ce080ba328ae89f9d74c82bb42c04b7b162e7822e0fbfeda5d2645d040",
+      "bytes": 2334
+    },
+    "connections": {
+      "path": "snapshots/3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b/connections.json",
+      "sha256": "675d141471f6d29c90bb2e7ea848556b45f68cede65e90b03d55a9d5f97acdab",
+      "bytes": 4561
+    }
+  },
+  "world": {
+    "name": "Bracken Quay Dock",
+    "description": "Original authored Bracken Quay dock, sampled reclaimed terrain and bounded local traffic. Connected to Warehouse.",
+    "worldId": "elsemesh.world:63121706-d439-4091-95b0-780b7d8563e8",
+    "regionId": "elsemesh.region:84aa118c-3dc7-46eb-9634-554ca0759873"
+  },
+  "regions": [
+    {
+      "regionId": "elsemesh.region:84aa118c-3dc7-46eb-9634-554ca0759873",
+      "name": "Bracken Quay Dock",
+      "scene": {
+        "snapshot": "3f504ebc18e747830330c5714f85f429af84cb5056f78417d628eaabdbab836b"
+      }
+    }
+  ],
+  "attribution": {
+    "authors": [
+      "DRG Software Solutions LLC",
+      "Dogan Ulus",
+      "myedsu",
+      "razor24"
+    ],
+    "license": "Original procedural dock MIT; traffic assets MPL-2.0 AND CC-BY-4.0",
+    "source": "Original ElseMesh Bracken Quay procedural scene and OpenX Assets 2025.8.21. See NOTICE and models/port/CREDITS.md."
+  },
+  "provenance": {
+    "sourceCommit": "fbc9f7e352b03b18d96ad428742770f844fcfc0d"
+  }
+}

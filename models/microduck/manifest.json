@@ -1,0 +1,602 @@
+{
+  "schema": 1,
+  "name": "Microduck",
+  "creator": "Pollen Robotics",
+  "source_repo": "https://github.com/pollen-robotics/microduck_rl",
+  "source_revision": "b02fdea4902c2b93b7d34a83a6f05da4ececb7d3",
+  "source_xml": "src/mjlab_microduck/robot/microduck/robot_walk.xml",
+  "source_xml_sha256": "80fc4424ed71e430ec4919110dfdb5c714dc1c4e1138e1832a16865cf31eb8c8",
+  "mesh_license": "CC BY-NC-SA-4.0",
+  "license_url": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+  "description_license": "Apache-2.0",
+  "adaptations": [
+    "MJCF STL conversion into rigid-node glTF hierarchy",
+    "Coordinate conversion Z-up to glTF Y-up",
+    "Realtime mesh decimation to 22 percent of triangles",
+    "Official policy CPU trajectories baked into node animation; horizontal root/yaw removed for world navigation"
+  ],
+  "units": "metres",
+  "display_scale_factor": 0.9337451063498875,
+  "display_height_m": 0.25,
+  "ground_offset_m": 0.00030011559866569655,
+  "source_axes": {
+    "up": "+Z",
+    "forward": "+X",
+    "left": "+Y"
+  },
+  "gltf_axes": {
+    "up": "+Y",
+    "forward": "+X",
+    "left": "-Z"
+  },
+  "bounds_measurement": "actual transformed visual vertices in first Idle pose",
+  "bounds_source_m": {
+    "min": [
+      -0.04687737673521042,
+      -0.07097851485013962,
+      -0.0003214106254745275
+    ],
+    "max": [
+      0.08993108570575714,
+      0.07106044143438339,
+      0.2674176096916199
+    ],
+    "size": [
+      0.13680846244096756,
+      0.142038956284523,
+      0.2677390203170944
+    ]
+  },
+  "visual_instances": 70,
+  "unique_meshes": 38,
+  "triangles_unique": {
+    "full": 431802,
+    "realtime": 94966
+  },
+  "joints": {
+    "left_hip_yaw": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -0.4363323129985824,
+        0.5235987755982988
+      ],
+      "body": "yaw2roll"
+    },
+    "left_hip_roll": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -0.3839724354386992,
+        0.38397243543880577
+      ],
+      "body": "hip_l"
+    },
+    "left_hip_pitch": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.570796326794949,
+        1.5707963267948442
+      ],
+      "body": "upper_leg_left"
+    },
+    "left_knee": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267948983,
+        1.5707963267948948
+      ],
+      "body": "leg"
+    },
+    "left_ankle": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267949063,
+        1.5707963267948868
+      ],
+      "body": "ankle_left"
+    },
+    "neck_pitch": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267948974,
+        1.0471975511965967
+      ],
+      "body": "neck"
+    },
+    "head_pitch": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267948966,
+        1.5707963267948966
+      ],
+      "body": "neck_pitch"
+    },
+    "head_yaw": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -2.9670597283903613,
+        2.9670597283903595
+      ],
+      "body": "yaw_roll_motion"
+    },
+    "head_roll": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -0.43633231299858327,
+        0.4363323129985815
+      ],
+      "body": "jaw_soft"
+    },
+    "right_hip_yaw": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -0.523598775598297,
+        0.43633231299858416
+      ],
+      "body": "bearing_roll"
+    },
+    "right_hip_roll": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -0.3839724354387507,
+        0.38397243543875426
+      ],
+      "body": "hip_l_2"
+    },
+    "right_hip_pitch": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.57079632679494,
+        1.570796326794853
+      ],
+      "body": "upper_leg_right"
+    },
+    "right_knee": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267949339,
+        1.5707963267948593
+      ],
+      "body": "leg_2"
+    },
+    "right_ankle": {
+      "axis": [
+        0.0,
+        0.0,
+        1.0
+      ],
+      "pivot_m": [
+        0,
+        0,
+        0
+      ],
+      "range": [
+        -1.5707963267949028,
+        1.5707963267948903
+      ],
+      "body": "ankle_right"
+    }
+  },
+  "clips": {
+    "Idle": {
+      "frames": 201,
+      "duration": 4,
+      "root_height_m": [
+        0.11600440273305587,
+        0.11607625028736117
+      ],
+      "displacement_xy_m": [
+        -0.0002444830933194186,
+        1.3962276657198425e-05
+      ],
+      "min_upright_cos": 0.9998626497842926,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.004787182860013839,
+      "mean_forward_speed_m_s": -6.112077332985465e-05,
+      "yaw_displacement_rad": 0.0017351081703191017,
+      "mean_yaw_rate_rad_s": 0.0004337770425797754,
+      "foot_site_z_range_m": [
+        -0.00027380347926989415,
+        -0.00018995100912317514
+      ],
+      "contact_count_range": [
+        7,
+        7
+      ],
+      "display_forward_speed_m_s": -5.7071222993072497e-05
+    },
+    "Walk": {
+      "frames": 43,
+      "duration": 0.84,
+      "root_height_m": [
+        0.1138412110125891,
+        0.1206098014237665
+      ],
+      "displacement_xy_m": [
+        0.05206973988152058,
+        -0.014556788074809434
+      ],
+      "min_upright_cos": 0.9972646979222555,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0.25,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.0032128223393682667,
+      "raw_4s_displacement_xy_m": [
+        0.2444511591717508,
+        -0.05717039304477287
+      ],
+      "selected_raw_frame_range": [
+        70,
+        112
+      ],
+      "mean_forward_speed_m_s": 0.06198778557323879,
+      "yaw_displacement_rad": -0.07227979882184271,
+      "mean_yaw_rate_rad_s": -0.08604737954981276,
+      "foot_site_z_range_m": [
+        -0.0013078863458317984,
+        0.017476454316205103
+      ],
+      "contact_count_range": [
+        3,
+        7
+      ],
+      "display_forward_speed_m_s": 0.05788079143247788
+    },
+    "Turn": {
+      "frames": 66,
+      "duration": 1.3,
+      "root_height_m": [
+        0.11558111477715247,
+        0.12417459231214761
+      ],
+      "displacement_xy_m": [
+        -0.012192669498246924,
+        0.0004350466497793932
+      ],
+      "min_upright_cos": 0.9955445799158351,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0,
+        "yaw_rad_s": 1.2
+      },
+      "loop_seam_joint_radians_max": 0.0025059940339771103,
+      "raw_4s_displacement_xy_m": [
+        -0.003700522958897854,
+        0.011888388629424446
+      ],
+      "selected_raw_frame_range": [
+        33,
+        98
+      ],
+      "mean_forward_speed_m_s": -0.009378976537113018,
+      "yaw_displacement_rad": 1.804267075022463,
+      "mean_yaw_rate_rad_s": 1.387897750017279,
+      "foot_site_z_range_m": [
+        -0.0018562317693691342,
+        0.02195728511129094
+      ],
+      "contact_count_range": [
+        3,
+        7
+      ],
+      "display_forward_speed_m_s": -0.008757573444099694
+    },
+    "Stop": {
+      "frames": 201,
+      "duration": 4,
+      "root_height_m": [
+        0.11386491456443576,
+        0.12032593033109044
+      ],
+      "displacement_xy_m": [
+        0.03099463263783478,
+        0.003930810313135892
+      ],
+      "min_upright_cos": 0.9976210413743799,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0.25,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.3704315117241393,
+      "mean_forward_speed_m_s": 0.007748658159458695,
+      "yaw_displacement_rad": -0.14064655436634846,
+      "mean_yaw_rate_rad_s": -0.035161638591587115,
+      "foot_site_z_range_m": [
+        -0.0013782577906701482,
+        0.016800608908529812
+      ],
+      "contact_count_range": [
+        3,
+        8
+      ],
+      "display_forward_speed_m_s": 0.007235271637172682
+    },
+    "Look": {
+      "frames": 201,
+      "duration": 4,
+      "root_height_m": [
+        0.11600802843823846,
+        0.11607625028736117
+      ],
+      "displacement_xy_m": [
+        0.00011060753587705677,
+        -3.960455342385386e-05
+      ],
+      "min_upright_cos": 0.999861281360246,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.19341532659095567,
+      "mean_forward_speed_m_s": 2.765188396926419e-05,
+      "yaw_displacement_rad": 0.006974849225010852,
+      "mean_yaw_rate_rad_s": 0.001743712306252713,
+      "foot_site_z_range_m": [
+        -0.0002913391478287612,
+        -0.00017813450968100566
+      ],
+      "contact_count_range": [
+        6,
+        7
+      ],
+      "display_forward_speed_m_s": 2.5819811337655342e-05
+    },
+    "EnterPortal": {
+      "frames": 201,
+      "duration": 4,
+      "root_height_m": [
+        0.11267216759495703,
+        0.12061704733655401
+      ],
+      "displacement_xy_m": [
+        0.1328144148026487,
+        -0.02492602402639554
+      ],
+      "min_upright_cos": 0.9958899031125794,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0.25,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.047005359819443426,
+      "mean_forward_speed_m_s": 0.03320360370066217,
+      "yaw_displacement_rad": -0.041248850267480874,
+      "mean_yaw_rate_rad_s": -0.010312212566870219,
+      "foot_site_z_range_m": [
+        -0.0018986917502878259,
+        0.01750237199282027
+      ],
+      "contact_count_range": [
+        3,
+        8
+      ],
+      "display_forward_speed_m_s": 0.03100370246867432
+    },
+    "ExitPortal": {
+      "frames": 201,
+      "duration": 4,
+      "root_height_m": [
+        0.1138412110125891,
+        0.1206098014237665
+      ],
+      "displacement_xy_m": [
+        0.20233702404555498,
+        -0.040927562905584476
+      ],
+      "min_upright_cos": 0.9973250887202522,
+      "provenance": "official velstand ONNX commanded CPU MuJoCo BAM trajectory",
+      "command": {
+        "vx_m_s": 0.25,
+        "yaw_rad_s": 0
+      },
+      "loop_seam_joint_radians_max": 0.3616914630788601,
+      "mean_forward_speed_m_s": 0.050584256011388745,
+      "yaw_displacement_rad": -0.3277928416464249,
+      "mean_yaw_rate_rad_s": -0.08194821041160623,
+      "foot_site_z_range_m": [
+        -0.001774413406802365,
+        0.017476454316205103
+      ],
+      "contact_count_range": [
+        3,
+        8
+      ],
+      "display_forward_speed_m_s": 0.04723280150898412
+    }
+  },
+  "policy": {
+    "repo": "pollen-robotics/microduck-policies",
+    "revision": "665ae4eb20bfe13bca1ef4ea6d4bb6b4a096e448",
+    "sha256": "2fc7f8ee6acd7d0d3f66a99927b5d5a56589aeed02ec714de329b252d5ccf492",
+    "actuator_model_revision": "62bd8ce12154340be97e06f7f41a0ca8f116d967",
+    "physics": {
+      "mujoco": "3.17.0",
+      "timestep_s": 0.002,
+      "control_hz": 50,
+      "bam": "M6 XL330 kp200 Vin7.4"
+    }
+  },
+  "files": {
+    "microduck-full.glb": {
+      "sha256": "53de8321c26566beba57eead1ffbfd9d5300c6b23aa81adae14218e0f28afb4f",
+      "bytes": 28089512
+    },
+    "microduck-realtime.glb": {
+      "sha256": "f8776b98041d44b51286cb13c599e6aaedbc59f15336f51aeb88da41c9878c54",
+      "bytes": 6929080
+    },
+    "microduck.blend": {
+      "sha256": "203a47bc212cfc9cf57203607ff867f70d3261960101a4183b64e97cd8840778",
+      "bytes": 27176927
+    }
+  },
+  "source_mesh_sha256": {
+    "src/mjlab_microduck/robot/microduck/assets/right_shell.stl": "3efba3e193cc6aa49d49a9c92cdded0504917397c9e2c5b8fe002a958e2f2d2b",
+    "src/mjlab_microduck/robot/microduck/assets/speaker.stl": "75a35f9bcf94cd8e52f99b3fd6ae667b48f52503f9075ee2f699eebe8e7b3ddf",
+    "src/mjlab_microduck/robot/microduck/assets/banana_pcb_locker.stl": "42ddde9d01bf5d91f88b99847017f14d97d2537ee27383c6d41dd8bf30a51134",
+    "src/mjlab_microduck/robot/microduck/assets/top_head_shell.stl": "6d01f396f514c9d2185cf6b8250b1d8382ac3fa0702eb525bcb284f706196291",
+    "src/mjlab_microduck/robot/microduck/assets/bearing_roll.stl": "b5603a64b2d965ad75ea847767b5798130852e12a658fde7b5068fc457e2adcc",
+    "src/mjlab_microduck/robot/microduck/assets/ankle_left.stl": "2ec1bd89205b407efebaa9a8898ad9fea741389d87b80ecc5c96b21d1668119e",
+    "src/mjlab_microduck/robot/microduck/assets/upper_leg_rigidity_plate.stl": "231b3e5f1e24d146d735dc158cbcfec0c95a0d0ca8c500f61f04d15d0b665652",
+    "src/mjlab_microduck/robot/microduck/assets/neck_pitch.stl": "a685ce65348ae4d0d49417c69a7a8871f8bbd54a6e3419362be9c334abd5d2ae",
+    "src/mjlab_microduck/robot/microduck/assets/noenoeil.stl": "e1167b3d5ad7fbbe6e63296bcd0c6b61556611e6bc1367b15ecfd27e3abb72f5",
+    "src/mjlab_microduck/robot/microduck/assets/face_part.stl": "d0e89a173e7bdc8038c4d413f458140d8f42f1a2f098f67a887c2388eff31718",
+    "src/mjlab_microduck/robot/microduck/assets/pcb__raspberry_pi_zero_2_w.stl": "802cc66fc5447c67fc642d1339e55160df10f2ad04a65efd130e35fb7b2d3c90",
+    "src/mjlab_microduck/robot/microduck/assets/foot_right.stl": "54f97fa1f0e0e611d31329df9f3c3b17ffcca2d695c579d1d32cbe99e8a6c7ef",
+    "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration__22x16x4.stl": "295ee68ed9766c91fe06d3a2a49d39f7c2f56cc943395d293afdeb013123435e",
+    "src/mjlab_microduck/robot/microduck/assets/elec_rpi_robot_hat_pcb.stl": "1a61582759d82b5b4df9b7d11099bf1bb3944fc77e6b74d3237adf24dd5d03d7",
+    "src/mjlab_microduck/robot/microduck/assets/xl330.stl": "96238ed0d020ce0009cf1a5aa4b6926176c800840318ee65e4375be2298d2744",
+    "src/mjlab_microduck/robot/microduck/assets/jaw_soft.stl": "2d2ade4e86df4b37ce313bb9b96023109dd04bab39dba08b154e76d332fbce2e",
+    "src/mjlab_microduck/robot/microduck/assets/hip_l.stl": "e175896932d76dc7648cf939aa39cb7b1d188b783d91745adb9a4cec65e9052c",
+    "src/mjlab_microduck/robot/microduck/assets/bottom_head_shell.stl": "1820f7cf96646b0fc0c431f07da87b91b13111bfa9857ab1bf2b1fc3388f8da2",
+    "src/mjlab_microduck/robot/microduck/assets/yaw2roll.stl": "6c8f193ec7cb40be0f48eeb5fba81bce2c87f12e1aab3f77f1bc4981386e1495",
+    "src/mjlab_microduck/robot/microduck/assets/seeed_bearing__configuration_default.stl": "e815f3483a2e7b80844f3c0938a47e53db38b12faed9b2d364414c19e4322da4",
+    "src/mjlab_microduck/robot/microduck/assets/ankle_right.stl": "f83f388ae00787415e76b8ecaab769f08f25b8c4e90c1937ff0fc4d68d81722e",
+    "src/mjlab_microduck/robot/microduck/assets/motor_support.stl": "ce0aa5bef82c7474512d302568c341b9769b3005e0bdb91a19c2eaaba6dad480",
+    "src/mjlab_microduck/robot/microduck/assets/foot_left.stl": "a1f5d43456d0f522bd60870153795f1e8112c1adf9b8b4373b59608d9545c044",
+    "src/mjlab_microduck/robot/microduck/assets/upper_leg_right.stl": "5caf996cc3e151b01f393cdc6a6a6a940c1d86179d8b7c7f5f85cf1f1ac2fb63",
+    "src/mjlab_microduck/robot/microduck/assets/power_support.stl": "ee45e397d3f3422f34940a4b61156c3c11c7e8c2b240451ce5f9ddd1622a130e",
+    "src/mjlab_microduck/robot/microduck/assets/np_f970.stl": "0e55a48281331b3b7b1a363d2e93b6012f37c52045b6dc922a149ca7c1b38388",
+    "src/mjlab_microduck/robot/microduck/assets/neck.stl": "b6e86b886153be8a8a776c1cb219c074ee9e89c8bd431117662a2d9e504d7cb5",
+    "src/mjlab_microduck/robot/microduck/assets/yaw_roll_motion.stl": "b0c9902dee19f06cdb7fa930292e0e1c91e2dc59baa971211495b58ff76c3c60",
+    "src/mjlab_microduck/robot/microduck/assets/lens.stl": "b1c717432ff7666398de58adec6a1b7e03a7e45aa155dbfe27a6152ef19663e5",
+    "src/mjlab_microduck/robot/microduck/assets/sole_left.stl": "e028c8b09fecd4cb354d042bf7fd95a1a1bc2d524d760d62137fa8d74093fc23",
+    "src/mjlab_microduck/robot/microduck/assets/upper_leg_left.stl": "8cb1c12dfa6d366a318bb1ec16f585427b9a185afeb7738d0a6f41f5db46a07d",
+    "src/mjlab_microduck/robot/microduck/assets/trunk_base.stl": "aa4f853ae555a8b765e585ce4519c0bbff325ce298ec15a1437792c52a0beac1",
+    "src/mjlab_microduck/robot/microduck/assets/left_shell.stl": "2abde8e2b79c9b011cdb11957c67ab4287b45d7301affd4235ab81141118e331",
+    "src/mjlab_microduck/robot/microduck/assets/sole_right.stl": "3f5068872f3add10eb967327651445bdfca635f5a8a01befa0ef05e462b72b4c",
+    "src/mjlab_microduck/robot/microduck/assets/jaw.stl": "45cdbd319a4583095d8daa0db07dee726522a743d59acb82d27d82ded500a1cf",
+    "src/mjlab_microduck/robot/microduck/assets/leg.stl": "9a91cc1ae31ecd9e0c1ba93f3bb2ad8a12e29bff24ec27d1ac66c0c3037d9fcf",
+    "src/mjlab_microduck/robot/microduck/assets/soft_mouth_top.stl": "3c2b52b0b6e2ce944a1e1b5a0838e1216be1ad3a34c8cdf91be186e634aec57b",
+    "src/mjlab_microduck/robot/microduck/assets/m12_lens_holder.stl": "031d5ffaf6247328cf6d020f6b6695ffb3f8d3f22cf923b85811351d89ecfd7c"
+  },
+  "notes": [
+    "Portal clips are commanded walking transitions; teleportation belongs to the world controller.",
+    "Horizontal root translation/yaw removed only in GLB; raw source trajectory retained.",
+    "No hardware or sim2real qualification."
+  ]
+}

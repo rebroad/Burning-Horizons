@@ -1,0 +1,62 @@
+[
+  {
+    "id": "bracken-dock-static",
+    "name": "Original authored Bracken Quay dock",
+    "mediaType": "model/gltf-binary",
+    "bytes": 2525908,
+    "source": "ElseMesh original code-authored dock, DRG Software Solutions LLC, 2026",
+    "license": "MIT",
+    "materialCount": 55,
+    "prepared": true,
+    "file": {
+      "path": "assets/c97bcbffd4e21e93b7f389ef068ab1dc3314170d8b8298961a347b66efa3c16a.glb",
+      "sha256": "c97bcbffd4e21e93b7f389ef068ab1dc3314170d8b8298961a347b66efa3c16a",
+      "bytes": 2525908
+    }
+  },
+  {
+    "id": "bracken-car-estate-lod1",
+    "name": "Original OpenX estate traffic LOD1",
+    "mediaType": "model/gltf-binary",
+    "bytes": 2430428,
+    "source": "OpenX Assets 2025.8.21, vevalabs/openx-assets; original ElseMesh derivative. See models/port/CREDITS.md and licensing/",
+    "license": "MPL-2.0 AND CC-BY-4.0",
+    "materialCount": 23,
+    "prepared": true,
+    "file": {
+      "path": "assets/b3c6eb6420563237453ec73f9ad3f3e4b98892fb5dafbc39d2e739d29c412eea.glb",
+      "sha256": "b3c6eb6420563237453ec73f9ad3f3e4b98892fb5dafbc39d2e739d29c412eea",
+      "bytes": 2430428
+    }
+  },
+  {
+    "id": "bracken-van-panel-lod1",
+    "name": "Original OpenX panel van traffic LOD1",
+    "mediaType": "model/gltf-binary",
+    "bytes": 766920,
+    "source": "OpenX Assets 2025.8.21, vevalabs/openx-assets; original ElseMesh derivative. See models/port/CREDITS.md and licensing/",
+    "license": "MPL-2.0 AND CC-BY-4.0",
+    "materialCount": 18,
+    "prepared": true,
+    "file": {
+      "path": "assets/89880a69dbe8ada94f03f6c6e0492efa299f5b650f6309b59bba9570f4ec5881.glb",
+      "sha256": "89880a69dbe8ada94f03f6c6e0492efa299f5b650f6309b59bba9570f4ec5881",
+      "bytes": 766920
+    }
+  },
+  {
+    "id": "bracken-utility-compact-lod1",
+    "name": "Original OpenX compact traffic LOD1",
+    "mediaType": "model/gltf-binary",
+    "bytes": 676584,
+    "source": "OpenX Assets 2025.8.21, vevalabs/openx-assets; original ElseMesh derivative. See models/port/CREDITS.md and licensing/",
+    "license": "MPL-2.0 AND CC-BY-4.0",
+    "materialCount": 18,
+    "prepared": true,
+    "file": {
+      "path": "assets/c0258215ed15b3f8027933b88399a2ee4dadd05792703c1684d435dc5d3bb728.glb",
+      "sha256": "c0258215ed15b3f8027933b88399a2ee4dadd05792703c1684d435dc5d3bb728",
+      "bytes": 676584
+    }
+  }
+]

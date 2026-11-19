@@ -1,0 +1,216 @@
+{
+  "traffic": {
+    "schema": "port-traffic/1",
+    "seed": 20261023,
+    "count": 6,
+    "roadY": 5.12,
+    "graph": {
+      "nodes": [
+        {
+          "id": "gate",
+          "x": 635,
+          "z": 417
+        },
+        {
+          "id": "west",
+          "x": 667,
+          "z": 362
+        },
+        {
+          "id": "north",
+          "x": 747,
+          "z": 345
+        },
+        {
+          "id": "depot",
+          "x": 841,
+          "z": 362
+        },
+        {
+          "id": "east",
+          "x": 877,
+          "z": 419
+        },
+        {
+          "id": "quay",
+          "x": 872,
+          "z": 492
+        },
+        {
+          "id": "yard",
+          "x": 788,
+          "z": 504
+        },
+        {
+          "id": "checkpoint",
+          "x": 693,
+          "z": 493
+        },
+        {
+          "id": "circle",
+          "x": 729,
+          "z": 422
+        },
+        {
+          "id": "warehouse",
+          "x": 805,
+          "z": 450
+        },
+        {
+          "id": "service",
+          "x": 802,
+          "z": 386
+        }
+      ],
+      "edges": [
+        {
+          "id": "gate-west",
+          "from": "gate",
+          "to": "west",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "west-north",
+          "from": "west",
+          "to": "north",
+          "roadClass": "secondary"
+        },
+        {
+          "id": "north-depot",
+          "from": "north",
+          "to": "depot",
+          "roadClass": "secondary"
+        },
+        {
+          "id": "depot-east",
+          "from": "depot",
+          "to": "east",
+          "roadClass": "secondary"
+        },
+        {
+          "id": "east-quay",
+          "from": "east",
+          "to": "quay",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "quay-yard",
+          "from": "quay",
+          "to": "yard",
+          "roadClass": "service"
+        },
+        {
+          "id": "yard-checkpoint",
+          "from": "yard",
+          "to": "checkpoint",
+          "roadClass": "service"
+        },
+        {
+          "id": "checkpoint-gate",
+          "from": "checkpoint",
+          "to": "gate",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "gate-circle",
+          "from": "gate",
+          "to": "circle",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "circle-warehouse",
+          "from": "circle",
+          "to": "warehouse",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "warehouse-east",
+          "from": "warehouse",
+          "to": "east",
+          "roadClass": "arterial"
+        },
+        {
+          "id": "circle-north",
+          "from": "circle",
+          "to": "north",
+          "roadClass": "secondary"
+        },
+        {
+          "id": "warehouse-yard",
+          "from": "warehouse",
+          "to": "yard",
+          "roadClass": "service"
+        },
+        {
+          "id": "warehouse-service",
+          "from": "warehouse",
+          "to": "service",
+          "roadClass": "service"
+        },
+        {
+          "id": "service-depot",
+          "from": "service",
+          "to": "depot",
+          "roadClass": "service"
+        }
+      ],
+      "classes": {
+        "arterial": {
+          "width": 8.4,
+          "speed": 11
+        },
+        "secondary": {
+          "width": 6.8,
+          "speed": 8
+        },
+        "service": {
+          "width": 5.4,
+          "speed": 5
+        }
+      }
+    },
+    "vehicleAssetIds": {
+      "car": "bracken-car-estate-lod1",
+      "van": "bracken-van-panel-lod1",
+      "utility": "bracken-utility-compact-lod1"
+    }
+  },
+  "portals": [
+    {
+      "id": "elsemesh-portal:33363276-b643-4ab5-9fb2-8f066aa8ba3b",
+      "name": "Warehouse",
+      "position": [
+        640,
+        6.8,
+        441
+      ],
+      "yaw": 0,
+      "width": 3,
+      "height": 3.6,
+      "destination": {
+        "worldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
+        "regionId": "elsemesh.region:3c498d61-7d1f-478a-8a85-d9e66d3b63fb",
+        "portalId": "elsemesh-portal:42b50e2b-6845-4c50-abd9-7b8234fbb034"
+      },
+      "enabled": true,
+      "view": {
+        "enabled": true,
+        "maxDistance": 65
+      },
+      "traversal": {
+        "enabled": true
+      },
+      "policyRef": "public-dock-warehouse-pair",
+      "visual": {
+        "frameColor": "#658e9d",
+        "unavailableColor": "#655b54"
+      }
+    }
+  ],
+  "water": {
+    "level": 0,
+    "waveAmplitude": 0.14,
+    "waveSpeed": 0.6,
+    "extent": 2048
+  }
+}

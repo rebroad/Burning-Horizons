@@ -1,0 +1,842 @@
+[
+  {
+    "id": "bracken-original-static-scene",
+    "kind": "glb",
+    "name": "Original Bracken Quay authored dock",
+    "assetId": "bracken-dock-static",
+    "position": [
+      0,
+      0,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      1,
+      1,
+      1
+    ],
+    "collision": "none",
+    "color": "#ffffff",
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-0",
+    "kind": "box",
+    "name": "port-shed-1",
+    "position": [
+      653,
+      7.12,
+      520
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      19.375,
+      2.5,
+      13.125
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-1",
+    "kind": "box",
+    "name": "port-shed-2",
+    "position": [
+      865,
+      7.12,
+      519
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      21.25,
+      2.5,
+      12.5
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-2",
+    "kind": "box",
+    "name": "container-0",
+    "position": [
+      713,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-3",
+    "kind": "box",
+    "name": "container-1",
+    "position": [
+      723,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-4",
+    "kind": "box",
+    "name": "container-2",
+    "position": [
+      733,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-5",
+    "kind": "box",
+    "name": "container-3",
+    "position": [
+      743,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-6",
+    "kind": "box",
+    "name": "container-4",
+    "position": [
+      753,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-7",
+    "kind": "box",
+    "name": "container-5",
+    "position": [
+      763,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-8",
+    "kind": "box",
+    "name": "container-6",
+    "position": [
+      773,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-9",
+    "kind": "box",
+    "name": "container-7",
+    "position": [
+      783,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-10",
+    "kind": "box",
+    "name": "container-8",
+    "position": [
+      793,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-11",
+    "kind": "box",
+    "name": "container-9",
+    "position": [
+      803,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-12",
+    "kind": "box",
+    "name": "container-10",
+    "position": [
+      813,
+      7.12,
+      528
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-13",
+    "kind": "box",
+    "name": "container-11",
+    "position": [
+      713,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-14",
+    "kind": "box",
+    "name": "container-12",
+    "position": [
+      723,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-15",
+    "kind": "box",
+    "name": "container-13",
+    "position": [
+      733,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-16",
+    "kind": "box",
+    "name": "container-14",
+    "position": [
+      743,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-17",
+    "kind": "box",
+    "name": "container-15",
+    "position": [
+      753,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-18",
+    "kind": "box",
+    "name": "container-16",
+    "position": [
+      763,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-19",
+    "kind": "box",
+    "name": "container-17",
+    "position": [
+      773,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-20",
+    "kind": "box",
+    "name": "container-18",
+    "position": [
+      783,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-21",
+    "kind": "box",
+    "name": "container-19",
+    "position": [
+      793,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-22",
+    "kind": "box",
+    "name": "container-20",
+    "position": [
+      803,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-23",
+    "kind": "box",
+    "name": "container-21",
+    "position": [
+      813,
+      7.12,
+      536
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      5.062499999999999,
+      2.5,
+      3.4999999999999996
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-24",
+    "kind": "box",
+    "name": "gatehouse-booth",
+    "position": [
+      670.7,
+      7.12,
+      412.1
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      3.4375,
+      2.5,
+      2.65625
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-25",
+    "kind": "box",
+    "name": "gatehouse-fence",
+    "position": [
+      670,
+      7.12,
+      408.42999999999995
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      2.5,
+      0.125
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-26",
+    "kind": "box",
+    "name": "gatehouse-fence",
+    "position": [
+      670,
+      7.12,
+      425.87
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      2.5,
+      0.125
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-27",
+    "kind": "box",
+    "name": "depot-wall",
+    "position": [
+      822,
+      7.12,
+      320
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      0.5,
+      2.5,
+      18.125
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-28",
+    "kind": "box",
+    "name": "depot-wall",
+    "position": [
+      854,
+      7.12,
+      320
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      0.5,
+      2.5,
+      18.125
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-29",
+    "kind": "box",
+    "name": "depot-wall",
+    "position": [
+      838,
+      7.12,
+      305.5
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      20,
+      2.5,
+      0.5
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-30",
+    "kind": "box",
+    "name": "depot-wall",
+    "position": [
+      827,
+      7.12,
+      334.5
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      2.5,
+      0.5
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-31",
+    "kind": "box",
+    "name": "depot-wall",
+    "position": [
+      849,
+      7.12,
+      334.5
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      2.5,
+      0.5
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-32",
+    "kind": "box",
+    "name": "port-cold-store",
+    "position": [
+      701,
+      7.12,
+      313
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      17.5,
+      2.5,
+      11.25
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  },
+  {
+    "id": "bracken-original-collider-33",
+    "kind": "box",
+    "name": "port-net and rigging workshop",
+    "position": [
+      649,
+      7.12,
+      347
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      11.875,
+      2.5,
+      10.625
+    ],
+    "color": "#777777",
+    "collision": "solid",
+    "collisionOnly": true,
+    "visible": true
+  }
+]

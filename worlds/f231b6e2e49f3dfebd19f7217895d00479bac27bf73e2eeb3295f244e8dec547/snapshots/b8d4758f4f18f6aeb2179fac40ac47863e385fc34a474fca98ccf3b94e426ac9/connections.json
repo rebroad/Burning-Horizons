@@ -1,0 +1,68 @@
+{
+  "splatScene": {
+    "schema": "elsemesh.splat-scene/1",
+    "asset": {
+      "path": "splat-scenes/9af82f32ac8644b8b501fb88b613f076e119fc133c1777766c90ff3e01566c92.sog",
+      "sha256": "9af82f32ac8644b8b501fb88b613f076e119fc133c1777766c90ff3e01566c92",
+      "bytes": 8831662,
+      "count": 719538
+    },
+    "physics": {
+      "path": "splat-scenes/8319d31ebd3d3887300c27bec2c53dfd02f541ec83c0f00ae12bff3a94cba240.json",
+      "sha256": "8319d31ebd3d3887300c27bec2c53dfd02f541ec83c0f00ae12bff3a94cba240",
+      "bytes": 86553
+    },
+    "transform": {
+      "position": [
+        -1.7182394363929918,
+        0.83489303534714,
+        0.12508425129100734
+      ],
+      "rotation": [
+        3.0640960749584925,
+        0.00038095669634228527,
+        -0.009826574661880593
+      ],
+      "scale": 0.19
+    },
+    "scaleStatus": "assumed-gameplay",
+    "provenance": {
+      "sourceFormat": "sog",
+      "sourceManifestSha256": "56030775a2ccd74a46c7ab4c9a9de0853327e06cecfa7dfc2465c7492cc4edd8",
+      "reviewSha256": "519d3e87d62ed3d172ee3caab080ddd3af2d2882915064ced7815e28256c868c",
+      "qualificationSha256": "b8edb233a11d3c8e90e8713f16bc2e8ac13bc37accd1f5957ea2157a67846d95"
+    }
+  },
+  "portals": [
+    {
+      "id": "elsemesh-portal:e65ee4f4-6357-4e80-bfe4-341a07965c0c",
+      "name": "Return to Loz's Warehouse",
+      "position": [
+        1.8,
+        1.45,
+        -1.95
+      ],
+      "yaw": 0,
+      "width": 1.4,
+      "height": 2.9,
+      "destination": {
+        "worldId": "elsemesh.world:2842c4f2-93a0-4492-b942-e53e524de319",
+        "regionId": "elsemesh.region:3c498d61-7d1f-478a-8a85-d9e66d3b63fb",
+        "portalId": "elsemesh-portal:3b1b0e2d-bb73-4660-b916-2edf7678699a"
+      },
+      "enabled": true,
+      "view": {
+        "enabled": true,
+        "maxDistance": 24
+      },
+      "traversal": {
+        "enabled": true
+      },
+      "policyRef": "public-world-tour",
+      "visual": {
+        "frameColor": "#8fe8e8",
+        "unavailableColor": "#334455"
+      }
+    }
+  ]
+}

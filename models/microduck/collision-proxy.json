@@ -1,0 +1,15 @@
+{
+  "schema": "elsemesh.npc-capsule/1",
+  "units": "metres",
+  "radius": 0.1,
+  "height": 0.275,
+  "feetOrigin": [
+    0,
+    0,
+    0
+  ],
+  "visualNominalHeight": 0.25,
+  "provenance": "Game parser actual-vertex Idle Walk Turn sweeps at 50 Hz; max horizontal radius .093827881m; max Y .263080659m. Conservative static capsule, not live robot simulation.",
+  "minimumAnimatedY": -0.002194422,
+  "sourceAssetSha256": "f8776b98041d44b51286cb13c599e6aaedbc59f15336f51aeb88da41c9878c54"
+}

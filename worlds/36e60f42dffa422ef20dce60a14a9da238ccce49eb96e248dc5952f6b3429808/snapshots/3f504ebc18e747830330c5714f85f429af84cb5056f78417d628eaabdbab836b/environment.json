@@ -1,0 +1,9 @@
+{
+  "sunAzimuth": 2.2,
+  "sunElevation": 0.8,
+  "fog": 0.0007,
+  "skyColor": "#9bb9bb",
+  "weather": "clear",
+  "cloudCoverage": 0.22,
+  "timeOfDay": 14
+}

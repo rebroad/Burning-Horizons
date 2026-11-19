@@ -1,0 +1,1957 @@
+[
+  {
+    "id": "neon-plaza-floor",
+    "kind": "box",
+    "name": "neon-plaza-floor",
+    "position": [
+      0,
+      -0.1,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      120,
+      0.125,
+      120
+    ],
+    "collision": "walkable",
+    "color": "#090d21",
+    "visible": true
+  },
+  {
+    "id": "neon-boundary-east",
+    "kind": "box",
+    "name": "neon-boundary-east",
+    "position": [
+      96.5,
+      5,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      0.625,
+      6.25,
+      121.25
+    ],
+    "collision": "solid",
+    "color": "#122239",
+    "visible": true
+  },
+  {
+    "id": "neon-boundary-west",
+    "kind": "box",
+    "name": "neon-boundary-west",
+    "position": [
+      -96.5,
+      5,
+      0
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      0.625,
+      6.25,
+      121.25
+    ],
+    "collision": "solid",
+    "color": "#122239",
+    "visible": true
+  },
+  {
+    "id": "neon-boundary-north",
+    "kind": "box",
+    "name": "neon-boundary-north",
+    "position": [
+      0,
+      5,
+      96.5
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      121.25,
+      6.25,
+      0.625
+    ],
+    "collision": "solid",
+    "color": "#172039",
+    "visible": true
+  },
+  {
+    "id": "neon-boundary-south",
+    "kind": "box",
+    "name": "neon-boundary-south",
+    "position": [
+      0,
+      5,
+      -96.5
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      121.25,
+      6.25,
+      0.625
+    ],
+    "collision": "solid",
+    "color": "#172039",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-00",
+    "kind": "box",
+    "name": "neon-foundation-00",
+    "position": [
+      -81,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-01",
+    "kind": "box",
+    "name": "neon-foundation-01",
+    "position": [
+      -81,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-02",
+    "kind": "box",
+    "name": "neon-foundation-02",
+    "position": [
+      -81,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-03",
+    "kind": "box",
+    "name": "neon-foundation-03",
+    "position": [
+      -81,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-04",
+    "kind": "box",
+    "name": "neon-foundation-04",
+    "position": [
+      -81,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-05",
+    "kind": "box",
+    "name": "neon-foundation-05",
+    "position": [
+      -81,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-06",
+    "kind": "box",
+    "name": "neon-foundation-06",
+    "position": [
+      -81,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-07",
+    "kind": "box",
+    "name": "neon-foundation-07",
+    "position": [
+      -81,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-08",
+    "kind": "box",
+    "name": "neon-foundation-08",
+    "position": [
+      -63,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-09",
+    "kind": "box",
+    "name": "neon-foundation-09",
+    "position": [
+      -63,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-10",
+    "kind": "box",
+    "name": "neon-foundation-10",
+    "position": [
+      -63,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-11",
+    "kind": "box",
+    "name": "neon-foundation-11",
+    "position": [
+      -63,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-12",
+    "kind": "box",
+    "name": "neon-foundation-12",
+    "position": [
+      -63,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-13",
+    "kind": "box",
+    "name": "neon-foundation-13",
+    "position": [
+      -63,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-14",
+    "kind": "box",
+    "name": "neon-foundation-14",
+    "position": [
+      -63,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-15",
+    "kind": "box",
+    "name": "neon-foundation-15",
+    "position": [
+      -63,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-16",
+    "kind": "box",
+    "name": "neon-foundation-16",
+    "position": [
+      -63,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-17",
+    "kind": "box",
+    "name": "neon-foundation-17",
+    "position": [
+      -63,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-18",
+    "kind": "box",
+    "name": "neon-foundation-18",
+    "position": [
+      -45,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-19",
+    "kind": "box",
+    "name": "neon-foundation-19",
+    "position": [
+      -45,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-20",
+    "kind": "box",
+    "name": "neon-foundation-20",
+    "position": [
+      -45,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-21",
+    "kind": "box",
+    "name": "neon-foundation-21",
+    "position": [
+      -45,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-22",
+    "kind": "box",
+    "name": "neon-foundation-22",
+    "position": [
+      -45,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-23",
+    "kind": "box",
+    "name": "neon-foundation-23",
+    "position": [
+      -45,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-24",
+    "kind": "box",
+    "name": "neon-foundation-24",
+    "position": [
+      -45,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-25",
+    "kind": "box",
+    "name": "neon-foundation-25",
+    "position": [
+      -45,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-26",
+    "kind": "box",
+    "name": "neon-foundation-26",
+    "position": [
+      -45,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-27",
+    "kind": "box",
+    "name": "neon-foundation-27",
+    "position": [
+      -45,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-28",
+    "kind": "box",
+    "name": "neon-foundation-28",
+    "position": [
+      -27,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-29",
+    "kind": "box",
+    "name": "neon-foundation-29",
+    "position": [
+      -27,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-30",
+    "kind": "box",
+    "name": "neon-foundation-30",
+    "position": [
+      -27,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-31",
+    "kind": "box",
+    "name": "neon-foundation-31",
+    "position": [
+      -27,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-32",
+    "kind": "box",
+    "name": "neon-foundation-32",
+    "position": [
+      -27,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-33",
+    "kind": "box",
+    "name": "neon-foundation-33",
+    "position": [
+      -27,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-34",
+    "kind": "box",
+    "name": "neon-foundation-34",
+    "position": [
+      -9,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-35",
+    "kind": "box",
+    "name": "neon-foundation-35",
+    "position": [
+      -9,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-36",
+    "kind": "box",
+    "name": "neon-foundation-36",
+    "position": [
+      -9,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-37",
+    "kind": "box",
+    "name": "neon-foundation-37",
+    "position": [
+      -9,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-38",
+    "kind": "box",
+    "name": "neon-foundation-38",
+    "position": [
+      -9,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-39",
+    "kind": "box",
+    "name": "neon-foundation-39",
+    "position": [
+      -9,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-40",
+    "kind": "box",
+    "name": "neon-foundation-40",
+    "position": [
+      9,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-41",
+    "kind": "box",
+    "name": "neon-foundation-41",
+    "position": [
+      9,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-42",
+    "kind": "box",
+    "name": "neon-foundation-42",
+    "position": [
+      9,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-43",
+    "kind": "box",
+    "name": "neon-foundation-43",
+    "position": [
+      9,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-44",
+    "kind": "box",
+    "name": "neon-foundation-44",
+    "position": [
+      9,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-45",
+    "kind": "box",
+    "name": "neon-foundation-45",
+    "position": [
+      9,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-46",
+    "kind": "box",
+    "name": "neon-foundation-46",
+    "position": [
+      27,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-47",
+    "kind": "box",
+    "name": "neon-foundation-47",
+    "position": [
+      27,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-48",
+    "kind": "box",
+    "name": "neon-foundation-48",
+    "position": [
+      27,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-49",
+    "kind": "box",
+    "name": "neon-foundation-49",
+    "position": [
+      27,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-50",
+    "kind": "box",
+    "name": "neon-foundation-50",
+    "position": [
+      27,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-51",
+    "kind": "box",
+    "name": "neon-foundation-51",
+    "position": [
+      27,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-52",
+    "kind": "box",
+    "name": "neon-foundation-52",
+    "position": [
+      45,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-53",
+    "kind": "box",
+    "name": "neon-foundation-53",
+    "position": [
+      45,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-54",
+    "kind": "box",
+    "name": "neon-foundation-54",
+    "position": [
+      45,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-55",
+    "kind": "box",
+    "name": "neon-foundation-55",
+    "position": [
+      45,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-56",
+    "kind": "box",
+    "name": "neon-foundation-56",
+    "position": [
+      45,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-57",
+    "kind": "box",
+    "name": "neon-foundation-57",
+    "position": [
+      45,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-58",
+    "kind": "box",
+    "name": "neon-foundation-58",
+    "position": [
+      45,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-59",
+    "kind": "box",
+    "name": "neon-foundation-59",
+    "position": [
+      45,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-60",
+    "kind": "box",
+    "name": "neon-foundation-60",
+    "position": [
+      45,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-61",
+    "kind": "box",
+    "name": "neon-foundation-61",
+    "position": [
+      45,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-62",
+    "kind": "box",
+    "name": "neon-foundation-62",
+    "position": [
+      63,
+      1.5,
+      -81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-63",
+    "kind": "box",
+    "name": "neon-foundation-63",
+    "position": [
+      63,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-64",
+    "kind": "box",
+    "name": "neon-foundation-64",
+    "position": [
+      63,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-65",
+    "kind": "box",
+    "name": "neon-foundation-65",
+    "position": [
+      63,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-66",
+    "kind": "box",
+    "name": "neon-foundation-66",
+    "position": [
+      63,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-67",
+    "kind": "box",
+    "name": "neon-foundation-67",
+    "position": [
+      63,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-68",
+    "kind": "box",
+    "name": "neon-foundation-68",
+    "position": [
+      63,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-69",
+    "kind": "box",
+    "name": "neon-foundation-69",
+    "position": [
+      63,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-70",
+    "kind": "box",
+    "name": "neon-foundation-70",
+    "position": [
+      63,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-71",
+    "kind": "box",
+    "name": "neon-foundation-71",
+    "position": [
+      63,
+      1.5,
+      81
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-72",
+    "kind": "box",
+    "name": "neon-foundation-72",
+    "position": [
+      81,
+      1.5,
+      -63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-73",
+    "kind": "box",
+    "name": "neon-foundation-73",
+    "position": [
+      81,
+      1.5,
+      -45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-74",
+    "kind": "box",
+    "name": "neon-foundation-74",
+    "position": [
+      81,
+      1.5,
+      -27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-75",
+    "kind": "box",
+    "name": "neon-foundation-75",
+    "position": [
+      81,
+      1.5,
+      -9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-76",
+    "kind": "box",
+    "name": "neon-foundation-76",
+    "position": [
+      81,
+      1.5,
+      9
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-77",
+    "kind": "box",
+    "name": "neon-foundation-77",
+    "position": [
+      81,
+      1.5,
+      27
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-78",
+    "kind": "box",
+    "name": "neon-foundation-78",
+    "position": [
+      81,
+      1.5,
+      45
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  },
+  {
+    "id": "neon-foundation-79",
+    "kind": "box",
+    "name": "neon-foundation-79",
+    "position": [
+      81,
+      1.5,
+      63
+    ],
+    "rotation": [
+      0,
+      0,
+      0
+    ],
+    "scale": [
+      6.25,
+      1.875,
+      6.25
+    ],
+    "collision": "solid",
+    "color": "#101c31",
+    "visible": true
+  }
+]

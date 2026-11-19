@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Loz's warehouse island surrounded by sea, sandy beaches and green mountains">
+<defs>
+ <linearGradient id="sky" x2="0" y2="1"><stop stop-color="#173f62"/><stop offset=".54" stop-color="#91cbd1"/><stop offset="1" stop-color="#d8e7bc"/></linearGradient>
+ <linearGradient id="sea" x2="0" y2="1"><stop stop-color="#1d88a0"/><stop offset=".45" stop-color="#0a557b"/><stop offset="1" stop-color="#032d55"/></linearGradient>
+ <linearGradient id="mountain" x2=".2" y2="1"><stop stop-color="#9eba9d"/><stop offset=".42" stop-color="#607f62"/><stop offset="1" stop-color="#214f40"/></linearGradient>
+ <linearGradient id="warehouse" x2="0" y2="1"><stop stop-color="#a76855"/><stop offset="1" stop-color="#633a35"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#c5ffff" stop-opacity=".98"/><stop offset=".4" stop-color="#65dded" stop-opacity=".56"/><stop offset="1" stop-color="#54d9e8" stop-opacity="0"/></radialGradient>
+ <filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>
+ <pattern id="trees" width="43" height="46" patternUnits="userSpaceOnUse"><circle cx="11" cy="17" r="13" fill="#2d6749"/><circle cx="28" cy="7" r="11" fill="#386f4b"/><circle cx="35" cy="35" r="15" fill="#225e44"/><circle cx="7" cy="42" r="12" fill="#437450"/></pattern>
+ <pattern id="waves" width="154" height="36" patternUnits="userSpaceOnUse"><path d="M5 25q42-11 78 0t68-2" fill="none" stroke="#b1ece4" stroke-opacity=".23" stroke-width="2"/></pattern>
+</defs>
+<path fill="url(#sky)" d="M0 0h1600v900H0z"/>
+<circle cx="1252" cy="169" r="69" fill="#fff0bb" opacity=".72"/>
+<path d="M0 515Q420 462 750 508T1600 495v405H0z" fill="url(#sea)"/>
+<path d="M0 545h1600v355H0z" fill="url(#waves)" opacity=".8"/>
+<path d="M223 553Q321 519 411 518L505 482 586 450 654 359 712 317 767 353 853 235 927 379 1025 411 1116 473 1262 491 1390 532Q1309 541 1279 590q-107 74-269 79l-108 48-145-19q-145 39-318-11-124-48-216-134Z" fill="#f3dfac"/>
+<path d="M278 543Q355 510 465 500l90-56 90-102 56-30 66 55 82-154 74 172 105 48 111 59 153 18q-47 14-74 38-114 42-229 54-147 69-268 41-143 44-284-27-90-39-159-73Z" fill="url(#mountain)"/>
+<path d="M383 525Q541 448 641 345l58-32 68 55 82-156 74 174q65 38 151 95l75 16Q975 520 844 571q-212 69-398 0Z" fill="url(#trees)" opacity=".6"/>
+<path d="M645 343l55-31 67 55 81-155 70 163-42-24-24-47-42 69-29-36-28 37-51-27-45 28Z" fill="#c3d7c4" opacity=".88"/>
+<path d="M303 556Q472 640 645 626q121 29 258-9 186 4 322-61" fill="none" stroke="#fff0ca" stroke-width="19" opacity=".72"/>
+<path d="M275 570Q464 653 647 644q121 27 261-9 191 4 323-62" fill="none" stroke="#a9f1e9" stroke-width="8" opacity=".75"/>
+<path d="M270 570Q506 712 738 681q265 34 490-104" fill="none" stroke="#c7f4e7" stroke-width="2" opacity=".7"/>
+<!-- The original island warehouse and its lit windows -->
+<path d="M638 478l100-30 180 15-104 31Z" fill="#573934"/>
+<path d="M638 478l176 16v92l-176-19Z" fill="url(#warehouse)"/>
+<path d="M814 494l104-31v104l-104 19Z" fill="#713d36"/>
+<path d="M660 499l31 2v38l-31-4Zm45 3 31 3v38l-31-4Zm45 3 31 3v39l-31-4Zm77-6 22-7v38l-22 6Zm35-11 23-7v38l-23 7Z" fill="#b5e4d7"/>
+<path d="M660 520l121 10M827 519l58-17" stroke="#4a3733" stroke-width="4"/>
+<path d="M694 500v41m44-38v40m44-35v37m68-55v39m35-48v38" stroke="#4a3733" stroke-width="3"/>
+<path d="M627 567l187 20 113-22" fill="none" stroke="#3d4939" stroke-width="10"/>
+<!-- The portal is part of the warehouse world -->
+<ellipse cx="1033" cy="562" rx="58" ry="78" fill="url(#glow)" filter="url(#blur)"/>
+<path d="M995 609v-89q0-12 12-12h51q13 0 13 13v88Z" fill="#0b4771" stroke="#a7f5ff" stroke-width="11"/>
+<path d="M1009 596v-73h49v73Z" fill="#267c9a" opacity=".83"/>
+<path d="M996 537l9-13-7-10 13-6m61 31-12-9 6-11-10-7m-50 96 13-10 10 8 13-9" fill="none" stroke="#e1ffff" stroke-width="4"/>
+<path d="M0 690Q223 622 461 698t414-6q290-33 725 31v177H0z" fill="#052f55" opacity=".36"/>
+<path d="M0 718q174-35 325 0m619 22q233-49 487 3M320 816q217-48 405-5" fill="none" stroke="#a4e3e0" stroke-opacity=".22" stroke-width="4"/>
+</svg>

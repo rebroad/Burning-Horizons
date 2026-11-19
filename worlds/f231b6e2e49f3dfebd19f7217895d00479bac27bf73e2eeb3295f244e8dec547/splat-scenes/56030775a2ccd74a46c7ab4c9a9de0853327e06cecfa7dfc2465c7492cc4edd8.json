@@ -1,0 +1,49 @@
+{
+  "schema": "elsemesh.splat-source-manifest/1",
+  "title": "Table Tennis Room",
+  "author": "ethan3111",
+  "source": "https://superspl.at/scene/0d9e613b",
+  "license": "CC BY 4.0",
+  "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+  "downloadBase": "https://d28zzqy0iyovbz.cloudfront.net/0d9e613b/v1/",
+  "files": [
+    {
+      "path": "sources/table-tennis/means_l.webp",
+      "sha256": "f263ef463c2fdbed8f089f8846bb0dcc6ea5be81f2e244b97e0127c41ef81cf8",
+      "bytes": 3570192
+    },
+    {
+      "path": "sources/table-tennis/means_u.webp",
+      "sha256": "23f128f11caa8513b6422cd8deb310d12e78b34e67b4072861caadb8b5961249",
+      "bytes": 617054
+    },
+    {
+      "path": "sources/table-tennis/meta.json",
+      "sha256": "ca310703ccd0516e48039ab632d82783567c3cdf63fb1e94e0dcaf091dd51218",
+      "bytes": 10262
+    },
+    {
+      "path": "sources/table-tennis/quats.webp",
+      "sha256": "ddc0cdd8efc41d82de2ab2c587489fe02b7a06e5ed67fa7367de42e7406cda99",
+      "bytes": 3790612
+    },
+    {
+      "path": "sources/table-tennis/scales.webp",
+      "sha256": "4c996b689577e65a4faf650e5ce87cec9cbf3dd678750bf5322d3c941fb18cc8",
+      "bytes": 3207806
+    },
+    {
+      "path": "sources/table-tennis/sh0.webp",
+      "sha256": "927a5f9f69df5801eed7d76ca47579fc923e618b65b27e6d910e444da515ea4a",
+      "bytes": 3759212
+    }
+  ],
+  "conversion": {
+    "tool": "@playcanvas/splat-transform",
+    "version": "2.3.2",
+    "command": "splat-transform --gpu cpu meta.json --decimate 719538 table-tennis.sog",
+    "sourceCount": 1244410,
+    "outputCount": 719538
+  },
+  "notes": "Original uploader video and PLY were not supplied. The PLY used for floor fitting is decoded from our reduced SOG, not an original capture."
+}

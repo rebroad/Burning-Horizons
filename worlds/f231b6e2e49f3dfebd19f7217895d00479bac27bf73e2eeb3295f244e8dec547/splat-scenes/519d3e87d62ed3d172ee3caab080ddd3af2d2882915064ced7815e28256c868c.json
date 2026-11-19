@@ -1,0 +1,40 @@
+{
+  "schema": "elsemesh.table-tennis-review/1",
+  "sourceManifestSha256": "56030775a2ccd74a46c7ab4c9a9de0853327e06cecfa7dfc2465c7492cc4edd8",
+  "asset": {
+    "sha256": "9af82f32ac8644b8b501fb88b613f076e119fc133c1777766c90ff3e01566c92",
+    "bytes": 8831662,
+    "count": 719538
+  },
+  "transform": {
+    "position": [
+      -1.7182394363929918,
+      0.83489303534714,
+      0.12508425129100734
+    ],
+    "rotation": [
+      3.0640960749584925,
+      0.00038095669634228527,
+      -0.009826574661880593
+    ],
+    "scale": 0.19
+  },
+  "floorFit": {
+    "input": "Derived reduced-SOG PLY",
+    "rawUprightPlaneY": "-0.009856475913350704*x -0.07765585933663541*z -4.407616141229561",
+    "candidatePoints": 21436,
+    "inliers": 14814,
+    "residualCutoffSourceUnits": 0.15
+  },
+  "visualReview": {
+    "reviewer": "Codex local visual inspection",
+    "playerEyeHeight": 1.65,
+    "wireframeEvidenceSha256": "e33e0dec70de0bd5f774cd8b28a8eef27ff0d41382e406a46759edf466dd1275",
+    "findings": "Upright room, floor grid follows scanned floor, table proxy encloses visible table. Safety bounds intentionally crop the wider gym/interior."
+  },
+  "limits": [
+    "Gameplay scale assumed, not surveyed.",
+    "Authored conservative collision proxies, not complete reconstruction or physical-device acceptance.",
+    "Adjacent gym, outdoor access and stairways intentionally outside walk bounds."
+  ]
+}
