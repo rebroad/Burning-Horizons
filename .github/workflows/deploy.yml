@@ -43,7 +43,7 @@ jobs:
         run: echo "type=$(gh api repos/${{ github.repository }}/pages --jq .build_type)" >> "$GITHUB_OUTPUT"
       - run: npm ci
       - run: npm test && npm run test:network && npm run test:security && npm run test:cargo && npm run test:vehicle-steering && npm run test:vehicle-material && npm run test:graphics && npm run test:renderer && npm run test:terrain-quality && npm run test:architecture && npm run test:publication
-      - run: npm run test:published-worlds && npm run test:public-duck && npm run test:player-eyes && npm run test:owner-splat && npm run test:portals && npm run test:worlds
+      - run: npm run test:published-worlds && npm run test:public-duck && npm run test:player-eyes && npm run test:owner-splat && npm run test:portals && npm run test:worlds:public
       - run: npm run test:loader-lod-spawn
       - run: npm run build
       - name: Read immutable public world revision

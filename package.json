@@ -1,5 +1,5 @@
 {
-  "name": "fred",
+  "name": "burning-horizons",
   "version": "0.2.0",
   "scripts": {
     "dev": "vite --host 127.0.0.1 --port 5189",
@@ -26,6 +26,7 @@
     "test:architecture": "node --test test/frame-timing.mjs test/collider-spatial-queries.mjs test/collider-ground-grid.mjs test/ground-collider-hierarchy.mjs test/collision-review.mjs test/animated-forest.mjs && node test/animated-forest-gpu.mjs",
     "test:worlds": "node --test test/repository-world-host.mjs test/repository-world-files.mjs test/repository-world-hosted.mjs test/repository-session.mjs",
     "test:portals": "node --test test/federation.mjs test/federation-v2.mjs test/repository-federation.mjs test/repository-world-server.mjs test/portal-transport.mjs test/repository-portal-transition.mjs test/repository-portal-recovery.mjs test/repository-world-host.mjs test/repository-world-actions.mjs test/portal-views.mjs test/portal-transform-scope.mjs test/webgl-portal-views.mjs test/webgl-portal-crop.mjs test/webgl-repository-scene.mjs test/webgl-opaque-depth-prepass.mjs test/webgl-native-plant-order.mjs test/webgl-native-island.mjs test/repository-water.mjs test/repository-ambient-behaviour.mjs test/repository-portal-effects.mjs test/repository-follow-camera.mjs test/portal-capture-quality.mjs test/native-repository-readiness.mjs test/avatar-appearance.mjs test/online-security.mjs test/material-resource-ownership.mjs test/repository-peer-readiness.mjs test/resident-repository-worlds.mjs test/portal-arrival-inbox.mjs test/portal-arrival-controller.mjs test/webgl-repository-readiness-signature.mjs test/avatar-transport-presentation.mjs test/native-avatar-readiness-races.mjs test/texture-submit-lifetime.mjs",
+    "test:worlds:public": "node --test test/repository-world-host.mjs test/repository-world-files.mjs test/repository-world-hosted.mjs",
     "test:landscape": "node --test test/repository-landscape.mjs test/repository-landscape-hosted.mjs test/repository-landscape-medium.mjs test/repository-landscape-promotion.mjs test/repository-landscape-rounded.mjs",
     "test:landscape:gpu": "node test/repository-landscape-browser-gpu.mjs",
     "test:published-worlds": "node --test test/published-world-boot.mjs test/published-world-runtime.mjs test/public-sunset-navigation.test.mjs test/splat-initial-preparation.mjs test/splat-readiness-contract.mjs test/splat-scene-source.mjs test/splat-scene-physics.mjs test/splat-scene-renderer.mjs test/splat-player-boundary.mjs test/splat-native-contact.mjs test/collider-ground-seams.mjs",
@@ -51,5 +52,5 @@
     "three": "0.180.0",
     "ws": "^8.22.0"
   },
-  "description": "Fred world engine and repository world player"
+  "description": "Burning-Horizons world engine and repository world player"
 }
